@@ -32945,7 +32945,7 @@ p.desc {
 }
 
 .header-one .logo-bg img {
-  max-height: 90px !important;
+  max-height: 75px !important;
   margin: 0;
   padding: 0;
 }
@@ -33000,8 +33000,6 @@ p.desc {
 .order-btn:hover {
   background: black;
 }
-
-
 
 /* Progress Bar Style */
 
@@ -33137,9 +33135,6 @@ p.desc {
   }
 }
 
-
-
-
 /* Footer left alignment for all columns */
 .rts-footer-one .main-footer-wrapper-one {
   display: flex;
@@ -33191,10 +33186,6 @@ p.desc {
   }
 }
 
-
-
-
-
 .button-area-banner .rts-btn {
   font-size: 1.1rem;
   padding: 16px 40px;
@@ -33203,34 +33194,7 @@ p.desc {
   letter-spacing: 0.5px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Gallery Content aline */
 
 .heading-paragraph {
   display: flex;
