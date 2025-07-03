@@ -32992,9 +32992,16 @@ p.desc {
   font-weight: bold;
 }
 
+.header-order-btn {
+  margin-right: 30px !important;
+  padding: 0;
+}
+
 .order-btn:hover {
   background: black;
 }
+
+
 
 /* Progress Bar Style */
 
@@ -33133,16 +33140,6 @@ p.desc {
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* Footer left alignment for all columns */
 .rts-footer-one .main-footer-wrapper-one {
   display: flex;
@@ -33192,4 +33189,57 @@ p.desc {
     padding-left: 0;
     min-width: 0;
   }
+}
+
+
+
+
+
+.button-area-banner .rts-btn {
+  font-size: 1.1rem;
+  padding: 16px 40px;
+  min-width: 160px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.heading-paragraph {
+  display: flex;
+  align-items: center; /* Vertically center */
+  gap: 10px; /* Space between heading and paragraph */
+}
+
+/* Heading aur paragraph ki font-size ko mat chhediye */
+.heading-paragraph h2,
+.heading-paragraph p {
+  margin: 0;
 }
