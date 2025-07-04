@@ -15078,6 +15078,9 @@ body.sal-disabled [data-sal|="flip"] {
   transform: none;
 }
 
+
+
+
 /*elements*/
 .rts-btn {
   padding: 20px 33px;
@@ -33343,7 +33346,7 @@ p.desc {
         /* Gallery Section */
         .gallery-section {
             padding: 20px 10px;
-            max-width: 1400px;
+            max-width: 1200px;
             margin-top: 30px;
         }
         
@@ -33423,24 +33426,14 @@ p.desc {
         
         .gallery-caption h3 {
             margin-bottom: 10px;
-            font-size: 20px;
+            font-size: 20px;  
         }
         
-
-
          .gallery-sec {
             padding: 20px 20px;
-            max-width: 1200px;
+            max-width: 1150px;
             margin: 0 auto;
         }
-
-
-
-
-
-
-
-
 
 
 
@@ -33460,4 +33453,24 @@ p.desc {
   gap: 20px;
   max-width: 900px;
   padding: 20px 0;
+}
+
+
+
+
+/* Add this at the end of your style.css file */
+.no-extra-margin {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+/* White border style for the button */
+.rts-btn.white-border {
+  border: 2px solid #ffffff; /* white border */
+  color: #ffffff; /* optional: keep text white */
+  background-color: transparent; /* optional: transparent background */
+  transition: all 0.3s ease;
+}
+.button-area-banner.fix-spacing {
+  margin-top: 20px; /* Adjust this value as per your design */
+  margin-bottom: 20px;
 }
