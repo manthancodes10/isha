@@ -32820,7 +32820,7 @@ p.desc {
 }
 .header-one .main-nav-desk .nav-link:hover,
 .header-one .main-nav-desk .nav-link.active {
-  color: #dd5903 !important; /* Optional: highlight on hover */
+  color: #c7a963 !important; /* Optional: highlight on hover */
 }
 
 /* my logo */
@@ -33187,6 +33187,7 @@ p.desc {
   }
 }
 
+
 .button-area-banner .rts-btn {
   font-size: 1.1rem;
   padding: 16px 40px;
@@ -33433,3 +33434,30 @@ p.desc {
             margin: 0 auto;
         }
 
+
+
+
+
+
+
+
+
+
+
+
+.footer-gallery img {
+  
+  width: 80%;
+  height: 70px; /* ✅ fixed height */
+  object-fit: cover; /* ✅ crop image nicely */
+  border-radius: 10px;
+}
+
+.footer-gallery {
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  padding: 20px 0;
+}
