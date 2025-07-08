@@ -29,6 +29,71 @@
   </head>
 
   <body class="home-one our-chef">
+    
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // 1. Sabhi section-content ko close karo
+    document.querySelectorAll('.section-content').forEach(function(content) {
+      content.style.display = 'none';
+    });
+    // 2. Sabhi section-header icons ko right karo
+    document.querySelectorAll('.section-header .section-icon i').forEach(function(icon) {
+      icon.classList.remove('fa-chevron-down');
+      icon.classList.add('fa-chevron-right');
+    });
+
+    // 3. Sirf VEG category-content ko open karo, baaki close
+    document.querySelectorAll('.category-content').forEach(function(catContent) {
+      // Agar is category ka header me veg-icon hai to open karo
+      const header = catContent.previousElementSibling;
+      if (header && header.querySelector('.veg-icon')) {
+        catContent.style.display = 'flex';
+        // Uska icon bhi down karo
+        const icon = header.querySelector('.category-icon i');
+        if(icon) {
+          icon.classList.remove('fa-chevron-right');
+          icon.classList.add('fa-chevron-down');
+        }
+      } else {
+        catContent.style.display = 'none';
+        // Non-veg/seafood icon ko right karo
+        const icon = header && header.querySelector('.category-icon i');
+        if(icon) {
+          icon.classList.remove('fa-chevron-down');
+          icon.classList.add('fa-chevron-right');
+        }
+      }
+    });
+  });
+
+  function toggleSection(element) {
+    const content = element.nextElementSibling;
+    const icon = element.querySelector('.section-icon i');
+    if (content.style.display === 'none' || content.style.display === '') {
+      content.style.display = 'block';
+      icon.classList.remove('fa-chevron-right');
+      icon.classList.add('fa-chevron-down');
+    } else {
+      content.style.display = 'none';
+      icon.classList.remove('fa-chevron-down');
+      icon.classList.add('fa-chevron-right');
+    }
+  }
+
+  function toggleCategory(element) {
+    const content = element.nextElementSibling;
+    const icon = element.querySelector('.category-icon i');
+    if (content.style.display === 'none' || content.style.display === '') {
+      content.style.display = 'flex';
+      icon.classList.remove('fa-chevron-right');
+      icon.classList.add('fa-chevron-down');
+    } else {
+      content.style.display = 'none';
+      icon.classList.remove('fa-chevron-down');
+      icon.classList.add('fa-chevron-right');
+    }
+  }
+</script>
     <!-- header style two -->
 
     <!-- header area start -->
@@ -42,7 +107,7 @@
                   <img
                     src="assets/images/logo/noBgColor.png"
                     alt="isha-logo"
-                    style="max-height: 60px"
+                    style="max-height: 95px !important;"
                   />
                 </a>
               </div>
@@ -80,15 +145,29 @@
                 <!-- nav-area end -->
               </div>
 
-              <!-- Order Now button start -->
+             <!-- Order Now button start -->
               <div
                 class="header-order-btn d-none d-lg-block"
                 style="margin: 0; padding: 0"
               >
-                <a href="menu-list.html" class="order-btn btn-primary">
+                <a href="order.html" class="order-btn btn-primary">
                   Order Now
                 </a>
+
+                
               </div>
+
+
+                <div
+                class="header-order-btn d-none d-lg-block"
+                style="margin: 0; padding: 0"
+              >
+                 <a href="tel:15017946084" class="order-btn btn-primary">
+    Book Table
+  </a>
+                
+              </div>
+              
               <!-- Order Now button end -->
 
               <!-- header right start -->
@@ -111,6 +190,12 @@
       </div>
     </header>
     <!-- header area end -->
+
+
+
+
+
+
 
     <!-- side bar for desktop -->
     <div id="side-bar" class="side-bar header-one">
@@ -210,282 +295,1625 @@
 
     <!-- rts breadcrumba area start -->
     <div class="rts-breadcrumb-area ptb_sm--100 bg-breadcrumb bg_image">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <!-- bread crumb inner wrapper -->
-            <div class="breadcrumb-inner text-center">
-              <div
-                class="banner-shape-area"
-                data-sal="slide-up"
-                data-sal-delay="120"
-                data-sal-duration="800"
-              >
-                <span class="shape"></span>
-                <span class="shape"></span>
-                <span class="shape"></span>
-              </div>
-              <h2
-                class="heading-title"
-                data-sal="slide-up"
-                data-sal-delay="120"
-                data-sal-duration="800"
-              >
-                Our Menu List
-              </h2>
-              <h1
-                class="main-title"
-                data-sal="slide-up"
-                data-sal-delay="120"
-                data-sal-duration="800"
-              >
-                Special Menus
-              </h1>
-            </div>
-            <!-- bread crumb inner wrapper end -->
-          </div>
-        </div>
-      </div>
+    
     </div>
     <!-- rts breadcrumba area end -->
-
-    <!-- MENU area start -->
-    <div class="rts-menu-area menu-area-2 rts-section-gap">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-lg-12">
-            <div class="banner-one-wrapper">
-              <div class="shape-2">
-                <img src="assets/images/project/vector4.webp" alt="shape" />
-              </div>
-              <div
-                class="title-img"
-                data-sal="zoom-in"
-                data-sal-delay="100"
-                data-sal-duration="800"
-              >
-                <img src="assets/images/about/title-shape.png" alt="about" />
-              </div>
-              <h1
-                class="title-banner"
-                data-sal="slide-up"
-                data-sal-delay="120"
-                data-sal-duration="800"
-              >
-                Starters & Main Dishes
-              </h1>
-              <p class="desc" data-sal="slide-up" data-sal-duration="800">
-                It’s the story of an everlasting love affair, Dieter Delicioz
-                and the <br />
-                Atlantic Ocean in the big air.
-              </p>
-            </div>
+<!-- MENU area start -->
+<div class="rts-menu-area menu-area-2 rts-section-gap">
+<div class="container-fluid" style="padding-left:0;padding-right:0;">
+    <div class="row text-center">
+      <div class="col-lg-12">
+        <div class="banner-one-wrapper">
+          <div class="shape-2">
+            <img src="assets/images/project/vector4.webp" alt="shape" />
           </div>
-        </div>
-        <div class="menu-area-2-inner">
-          <div class="shape-1">
-            <img src="assets/images/project/vector3.webp" alt="shape" />
+          <div class="title-img">
+            <img src="assets/images/about/title-shape.png" alt="about" />
           </div>
-          <div class="row justify-content-center">
-            <div class="col-lg-6">
-              <div
-                class="menu-wrapper"
-                data-sal="zoom-in"
-                data-sal-delay="150"
-                data-sal-duration="800"
-              >
-                <div class="menu-image">
-                  <a href="shop-details.html"
-                    ><img src="assets/images/project/sm-01.jpg" alt="item"
-                  /></a>
-                </div>
-                <div class="content">
-                  <h4 class="p-title">
-                    <a href="shop-details.html">Chicha Morada</a>
-                  </h4>
-                  <p class="desc">
-                    beetroot and datterini, goat cheese, Ricotta
-                  </p>
-                </div>
-                <div class="price-tag"><a href="#">$33.00</a></div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div
-                class="menu-wrapper"
-                data-sal="zoom-in"
-                data-sal-delay="150"
-                data-sal-duration="800"
-              >
-                <div class="menu-image">
-                  <a href="shop-details.html"
-                    ><img src="assets/images/project/sm-02.jpg" alt="item"
-                  /></a>
-                </div>
-                <div class="content">
-                  <h4 class="p-title">
-                    <a href="shop-details.html">Tommy’s Margarita</a>
-                  </h4>
-                  <p class="desc">
-                    beetroot and datterini, goat cheese, Ricotta
-                  </p>
-                </div>
-                <div class="price-tag"><a href="#">$30.00</a></div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div
-                class="menu-wrapper"
-                data-sal="zoom-in"
-                data-sal-delay="150"
-                data-sal-duration="800"
-              >
-                <div class="menu-image">
-                  <a href="shop-details.html"
-                    ><img src="assets/images/project/sm-03.jpg" alt="item"
-                  /></a>
-                </div>
-                <div class="content">
-                  <h4 class="p-title">
-                    <a href="shop-details.html">Prickly Pear Tonic</a>
-                  </h4>
-                  <p class="desc">
-                    beetroot and datterini, goat cheese, Ricotta
-                  </p>
-                </div>
-                <div class="price-tag"><a href="#">$15.00</a></div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div
-                class="menu-wrapper"
-                data-sal="zoom-in"
-                data-sal-delay="150"
-                data-sal-duration="800"
-              >
-                <div class="menu-image">
-                  <a href="shop-details.html"
-                    ><img src="assets/images/project/sm-04.jpg" alt="item"
-                  /></a>
-                </div>
-                <div class="content">
-                  <h4 class="p-title">
-                    <a href="shop-details.html">Crispy Skin Chicken</a>
-                  </h4>
-                  <p class="desc">
-                    beetroot and datterini, goat cheese, Ricotta
-                  </p>
-                </div>
-                <div class="price-tag"><a href="#">$16.00</a></div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div
-                class="menu-wrapper"
-                data-sal="zoom-in"
-                data-sal-delay="150"
-                data-sal-duration="800"
-              >
-                <div class="menu-image">
-                  <a href="shop-details.html"
-                    ><img src="assets/images/project/sm-05.jpg" alt="item"
-                  /></a>
-                </div>
-                <div class="content">
-                  <h4 class="p-title">
-                    <a href="shop-details.html">Wild Mushroom Arancini</a>
-                  </h4>
-                  <p class="desc">
-                    beetroot and datterini, goat cheese, Ricotta
-                  </p>
-                </div>
-                <div class="price-tag"><a href="#">$12.00</a></div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div
-                class="menu-wrapper"
-                data-sal="zoom-in"
-                data-sal-delay="150"
-                data-sal-duration="800"
-              >
-                <div class="menu-image">
-                  <a href="shop-details.html"
-                    ><img src="assets/images/project/sm-06.jpg" alt="item"
-                  /></a>
-                </div>
-                <div class="content">
-                  <h4 class="p-title">
-                    <a href="shop-details.html">Fresh Oysters Dozen</a>
-                  </h4>
-                  <p class="desc">
-                    beetroot and datterini, goat cheese, Ricotta
-                  </p>
-                </div>
-                <div class="price-tag"><a href="#">$10.00</a></div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div
-                class="menu-wrapper"
-                data-sal="zoom-in"
-                data-sal-delay="150"
-                data-sal-duration="800"
-              >
-                <div class="menu-image">
-                  <a href="shop-details.html"
-                    ><img src="assets/images/project/sm-07.jpg" alt="item"
-                  /></a>
-                </div>
-                <div class="content">
-                  <h4 class="p-title">
-                    <a href="shop-details.html">Bruno’s Scribble</a>
-                  </h4>
-                  <p class="desc">
-                    beetroot and datterini, goat cheese, Ricotta
-                  </p>
-                </div>
-                <div class="price-tag"><a href="#">$33.00</a></div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div
-                class="menu-wrapper"
-                data-sal="zoom-in"
-                data-sal-delay="150"
-                data-sal-duration="800"
-              >
-                <div class="menu-image">
-                  <a href="shop-details.html"
-                    ><img src="assets/images/project/sm-08.jpg" alt="item"
-                  /></a>
-                </div>
-                <div class="content">
-                  <h4 class="p-title">
-                    <a href="shop-details.html">Purple Corn Tostada</a>
-                  </h4>
-                  <p class="desc">
-                    beetroot and datterini, goat cheese, Ricotta
-                  </p>
-                </div>
-                <div class="price-tag"><a href="#">$20.00</a></div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="button-area-banner"
-            data-sal="slide-up"
-            data-sal-delay="150"
-            data-sal-duration="800"
-          >
-            <a href="about.html" class="rts-btn btn-primary">View More</a>
-            <a href="menu-list.html" class="rts-btn btn-secondary">Food Menu</a>
-          </div>
+          <h1 class="title-banner">Our Special Menu</h1>
+          <p class="desc">
+            Explore our diverse menu — fresh, flavorful, and full of passion.
+          </p>
         </div>
       </div>
     </div>
-    <!-- MENU area end -->
-  <!-- rts footer area start -->
+
+    <div class="accordion" id="menuAccordion">
+      <!-- Example Item -->
+  <div class="container">
+   
+         <div class="menu-container">
+        <!-- First Impression Section -->
+        <div class="menu-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2><i class="fas fa-star"></i> First Impression</h2>
+                <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="section-content">
+                <div class="category">
+                    <div class="category-header" onclick="toggleCategory(this)">
+                        <h3><i class="fas fa-leaf veg-icon"></i> VEG</h3>
+                        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <img src="assets/images/menu/f57d19ee-6f21-4eb1-b9bd-a45517ff6378.jpeg" alt="Samosa" class="item-image">
+                                <div class="item-info">
+                                    <div class="item-name">Samosa</div>
+                                    <div class="item-description">Golden-fried pastry filled with spiced potatoes and peas, served with tangy chutney</div>
+                                </div>
+                            </div>
+                            <div class="item-price">$4.99</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <img src="assets/images/menu/Baby Spinach Salad.jpeg" alt="Baby Spinach Chat" class="item-image">
+                                <div class="item-info">
+                                    <div class="item-name">Baby Spinach Chat</div>
+                                    <div class="item-description">Crisp spinach leaves topped with yogurt, tamarind, and mint chutneys</div>
+                                </div>
+                            </div>
+                            <div class="item-price">$10.99</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <img src="assets/images/menu/Brussels Sprouts Pakora recipe on Food52.jpeg" alt="Crispy Brussel Sprout Pakora" class="item-image">
+                                <div class="item-info">
+                                    <div class="item-name">Crispy Brussel Sprout Pakora</div>
+                                    <div class="item-description">Crunchy gram flour fritters made with fresh brussels sprouts</div>
+                                </div>
+                            </div>
+                            <div class="item-price">$10.99</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="category">
+                    <div class="category-header" onclick="toggleCategory(this)">
+                        <h3><i class="fas fa-drumstick-bite non-veg-icon"></i> NON-VEG</h3>
+                        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <img src="assets/images/menu/Golden Crispy Calamari Rings Served with Creamy Tartar Sauce for the Perfect Snack.jpeg" alt="Lemon Pepper Calamari" class="item-image">
+                                <div class="item-info">
+                                    <div class="item-name">Lemon Pepper Calamari</div>
+                                    <div class="item-description">Calamari rings seasoned with zesty lemon-pepper, fried until crispy</div>
+                                </div>
+                            </div>
+                            <div class="item-price">$11.99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Soup Section -->
+        <div class="menu-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2><i class="fas fa-soup"></i> Soup</h2>
+                <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="section-content">
+                <div class="category">
+                    <div class="category-header" onclick="toggleCategory(this)">
+                        <h3><i class="fas fa-leaf veg-icon"></i> VEG</h3>
+                        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <img src="https://picsum.photos/seed/lentil/80/80.jpg" alt="Lentil Soup" class="item-image">
+                                <div class="item-info">
+                                    <div class="item-name">Lentil Soup</div>
+                                    <div class="item-description">A light and healthy soup made with slow-cooked yellow lentils and mild spices</div>
+                                </div>
+                            </div>
+                            <div class="item-price">$3.99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Salad Section -->
+        <div class="menu-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2><i class="fas fa-leaf"></i> Salad</h2>
+                <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="section-content">
+                <div class="category">
+                    <div class="category-header" onclick="toggleCategory(this)">
+                        <h3><i class="fas fa-leaf veg-icon"></i> VEG</h3>
+                        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <img src="https://picsum.photos/seed/salad/80/80.jpg" alt="Isha's Garden Salad" class="item-image">
+                                <div class="item-info">
+                                    <div class="item-name">Isha's Garden Salad</div>
+                                    <div class="item-description">A fresh medley of lettuce, cucumbers, onions, and tomatoes tossed in a light dressing</div>
+                                </div>
+                            </div>
+                            <div class="item-price">$6.99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Thali Platter Section -->
+        <div class="menu-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <h2><i class="fas fa-utensils"></i> Thali Platter</h2>
+                <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="section-content">
+                <div class="category">
+                    <div class="category-header" onclick="toggleCategory(this)">
+                        <h3><i class="fas fa-leaf veg-icon"></i> VEG</h3>
+                        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <img src="https://picsum.photos/seed/vegthali/80/80.jpg" alt="Veg Thali" class="item-image">
+                                <div class="item-info">
+                                    <div class="item-name">Veg Thali</div>
+                                    <div class="item-description">A wholesome platter featuring a variety of vegetarian curries, rice, roti, dessert, and condiments</div>
+                                </div>
+                            </div>
+                            <div class="item-price">$15.99</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="category">
+                    <div class="category-header" onclick="toggleCategory(this)">
+                        <h3><i class="fas fa-drumstick-bite non-veg-icon"></i> NON-VEG</h3>
+                        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <img src="https://picsum.photos/seed/nonvegthali/80/80.jpg" alt="Non Veg Thali" class="item-image">
+                                <div class="item-info">
+                                    <div class="item-name">Non Veg Thali</div>
+                                    <div class="item-description">A hearty combination of non-vegetarian curries, rice, bread, dessert, and sides served on a traditional platter</div>
+                                </div>
+                            </div>
+                            <div class="item-price">$17.99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+      <!-- Appetizers Section -->
+<div class="menu-section">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2><i class="fas fa-hamburger"></i> Appetizers</h2>
+    <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+  </div>
+
+  <div class="section-content">
+
+    <!-- VEG Category -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <h3><i class="fas fa-leaf veg-icon"></i> VEG</h3>
+        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+      </div>
+      <div class="category-content">
+
+        <!-- VEG Items -->
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/paneer/80/80.jpg" alt="Chilli Paneer" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Chilli Paneer</div>
+              <div class="item-description">Paneer cubes stir-fried with onions, peppers, and spicy Indo-Chinese sauce</div>
+            </div>
+          </div>
+          <div class="item-price">$11.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/jalapeno/80/80.jpg" alt="Jalapeno Paneer" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Jalapeno Paneer</div>
+              <div class="item-description">Spicy fusion of paneer and jalapeños tossed in a tangy, bold seasoning</div>
+            </div>
+          </div>
+          <div class="item-price">$11.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/corn/80/80.jpg" alt="Baby Corn Manchuria" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Baby Corn Manchuria</div>
+              <div class="item-description">Crispy baby corn fritters tossed in a flavorful Manchurian sauce</div>
+            </div>
+          </div>
+          <div class="item-price">$11.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/chillibabycorn/80/80.jpg" alt="Chilli Baby Corn" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Chilli Baby Corn</div>
+              <div class="item-description">Stir-fried baby corn with bell peppers and a kick of chilli garlic flavor</div>
+            </div>
+          </div>
+          <div class="item-price">$11.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/gobi/80/80.jpg" alt="Gobi 65" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Gobi 65</div>
+              <div class="item-description">Deep-fried cauliflower bites coated in a fiery South Indian marinade</div>
+            </div>
+          </div>
+          <div class="item-price">$11.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/gobimanchuria/80/80.jpg" alt="Gobi Manchuria" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Gobi Manchuria</div>
+              <div class="item-description">Crispy cauliflower florets cooked in a savory Manchurian gravy</div>
+            </div>
+          </div>
+          <div class="item-price">$11.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/brussel/80/80.jpg" alt="Crispy Brussel Sprouts" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Crispy Brussel Sprouts</div>
+              <div class="item-description">Flash-fried brussels sprouts tossed with spices for a crunchy twist</div>
+            </div>
+          </div>
+          <div class="item-price">$11.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/spinach/80/80.jpg" alt="Baby Spinach Chaat" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Baby Spinach Chaat</div>
+              <div class="item-description">Crunchy spinach leaves layered with chutneys, yogurt, and spice dust</div>
+            </div>
+          </div>
+          <div class="item-price">$11.99</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NON-VEG Category -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <h3><i class="fas fa-drumstick-bite non-veg-icon"></i> NON-VEG</h3>
+        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+      </div>
+      <div class="category-content">
+
+        <!-- NON-VEG Items -->
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/chickensamosa/80/80.jpg" alt="Chicken Samosa" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Chicken Samosa (4 pieces)</div>
+              <div class="item-description">Flaky pastry pockets filled with spiced minced chicken, fried until golden</div>
+            </div>
+          </div>
+          <div class="item-price">$4.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/chicken65/80/80.jpg" alt="Chicken 65" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Chicken 65</div>
+              <div class="item-description">South Indian–style crispy chicken bites tossed in a fiery red masala</div>
+            </div>
+          </div>
+          <div class="item-price">$12.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/chicken/80/80.jpg" alt="Chilli Chicken" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Chilli Chicken</div>
+              <div class="item-description">Boneless chicken sautéed with peppers, onions, and spicy Indo-Chinese sauce</div>
+            </div>
+          </div>
+          <div class="item-price">$12.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/chickenmanchuria/80/80.jpg" alt="Chicken Manchuria" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Chicken Manchuria</div>
+              <div class="item-description">Fried chicken pieces simmered in a savory Manchurian gravy</div>
+            </div>
+          </div>
+          <div class="item-price">$12.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/benton/80/80.jpg" alt="Benton Chicken Pakoda" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Benton Chicken Pakoda</div>
+              <div class="item-description">Crunchy chicken fritters marinated in house-blend spices, a perfect tea-time snack</div>
+            </div>
+          </div>
+          <div class="item-price">$12.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/lollipop/80/80.jpg" alt="Chicken Lollipop" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Chicken Lollipop</div>
+              <div class="item-description">Juicy chicken drumettes shaped like lollipops, deep-fried and served with spicy sauce</div>
+            </div>
+          </div>
+          <div class="item-price">$12.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/jalapenoschicken/80/80.jpg" alt="Jalapeno Chicken" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Jalapeno Chicken</div>
+              <div class="item-description">Chicken bites tossed with jalapeños and onions for a bold, spicy kick</div>
+            </div>
+          </div>
+          <div class="item-price">$12.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/gingerflex/80/80.jpg" alt="Ginger Flex Chicken" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Ginger Flex Chicken</div>
+              <div class="item-description">Tender chicken strips infused with ginger and stir-fried in a tangy sauce</div>
+            </div>
+          </div>
+          <div class="item-price">$12.99</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Sea Food Section -->
+<div class="menu-section">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2><i class="fas fa-fish"></i> Sea Food</h2>
+    <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+  </div>
+
+  <div class="section-content">
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <h3><i class="fas fa-fish seafood-icon"></i> SEA FOOD</h3>
+        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+      </div>
+
+      <div class="category-content">
+        <!-- Arkansas Spl Fish Fry -->
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/fishfry/80/80.jpg" alt="Arkansas Spl Fish Fry" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Arkansas Spl Fish Fry</div>
+              <div class="item-description">Southern-style crispy fried fish seasoned with bold, homestyle spices.</div>
+            </div>
+          </div>
+          <div class="item-price">$13.99</div>
+        </div>
+
+        <!-- Chilli Fish -->
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/chillifish/80/80.jpg" alt="Chilli Fish" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Chilli Fish</div>
+              <div class="item-description">Boneless fish chunks tossed in a spicy chilli-garlic sauce with bell peppers.</div>
+            </div>
+          </div>
+          <div class="item-price">$13.99</div>
+        </div>
+
+        <!-- Majestic Shrimp -->
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/majesticshrimp/80/80.jpg" alt="Majestic Shrimp" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Majestic Shrimp</div>
+              <div class="item-description">Succulent shrimp marinated in rich spices and stir-fried with herbs and chilies.</div>
+            </div>
+          </div>
+          <div class="item-price">$13.99</div>
+        </div>
+
+        <!-- Lemon Pepper Calamari -->
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/lemonpeppercalamari/80/80.jpg" alt="Lemon Pepper Calamari" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Lemon Pepper Calamari</div>
+              <div class="item-description">Tender calamari rings, lightly fried and finished with zesty lemon-pepper seasoning.</div>
+            </div>
+          </div>
+          <div class="item-price">$13.99</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- MOMO Section -->
+<div class="menu-section">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2><i class="fas fa-dumpling"></i> MOMO</h2>
+    <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+  </div>
+
+  <div class="section-content">
+    <!-- VEG MOMO Category -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <h3><i class="fas fa-leaf veg-icon"></i> VEG</h3>
+        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+      </div>
+      <div class="category-content">
+        <!-- Veg Momo -->
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/veg/80/80.jpg" alt="Veg Momo" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Veg Momo</div>
+              <div class="item-description">Steamed dumplings filled with spiced mixed vegetables, served with chutney.</div>
+            </div>
+          </div>
+          <div class="item-price">$10.99</div>
+        </div>
+
+        <!-- Butter Veg Momo -->
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/butterveg/80/80.jpg" alt="Butter Veg Momo" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Butter Veg Momo</div>
+              <div class="item-description">Soft veg momos tossed in a rich, creamy butter sauce for extra indulgence.</div>
+            </div>
+          </div>
+          <div class="item-price">$10.99</div>
+        </div>
+
+        <!-- Malai Veg Momo -->
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/malaiveg/80/80.jpg" alt="Malai Veg Momo" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Malai Veg Momo</div>
+              <div class="item-description">Mildly spiced veg dumplings coated in a silky malai (cream-based) sauce.</div>
+            </div>
+          </div>
+          <div class="item-price">$10.99</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NON-VEG MOMO Category -->
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <h3><i class="fas fa-drumstick-bite non-veg-icon"></i> NON-VEG</h3>
+        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+      </div>
+      <div class="category-content">
+        <!-- Chicken Momo -->
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/chickenmomo/80/80.jpg" alt="Chicken Momo" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Chicken Momo</div>
+              <div class="item-description">Juicy dumplings stuffed with flavorful minced chicken and aromatic herbs.</div>
+            </div>
+          </div>
+          <div class="item-price">$10.99</div>
+        </div>
+
+        <!-- Butter Chicken Momo -->
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/butterchicken/80/80.jpg" alt="Butter Chicken Momo" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Butter Chicken Momo</div>
+              <div class="item-description">Chicken momos smothered in a creamy, buttery tomato-based sauce.</div>
+            </div>
+          </div>
+          <div class="item-price">$10.99</div>
+        </div>
+
+        <!-- Malai Chicken Momo -->
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="https://picsum.photos/seed/malaichicken/80/80.jpg" alt="Malai Chicken Momo" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Malai Chicken Momo</div>
+              <div class="item-description">Tender chicken momos enriched with a smooth, mildly spiced cream sauce.</div>
+            </div>
+          </div>
+          <div class="item-price">$10.99</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+        <!-- Curries Section -->
+     <!-- Curries Section -->
+<div class="menu-section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2><i class="fas fa-pepper-hot"></i> Curries</h2>
+        <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+    </div>
+    <div class="section-content">
+        <!-- VEG Category -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-leaf veg-icon"></i> VEG</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/dal/80/80.jpg" alt="Yellow Dal Tadka" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Yellow Dal Tadka</div>
+                            <div class="item-description">Yellow lentils tempered with garlic, cumin, and ghee for a classic comfort dish</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$12.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/kofta/80/80.jpg" alt="Malai Kofta" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Malai Kofta</div>
+                            <div class="item-description">Soft vegetable and paneer dumplings simmered in a creamy, mildly spiced gravy</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$12.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/paneer/80/80.jpg" alt="Paneer Butter Masala" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Paneer Butter Masala</div>
+                            <div class="item-description">Cubes of paneer cooked in a rich, buttery tomato cream sauce</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$13.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/chickpea/80/80.jpg" alt="Chole Bhature" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Chole Bhature</div>
+                            <div class="item-description">Spiced chickpea curry served with fluffy, deep-fried bhature bread</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$12.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/paneertikka/80/80.jpg" alt="Paneer Tikka Masala" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Paneer Tikka Masala</div>
+                            <div class="item-description">Grilled paneer cubes simmered in a smoky, spiced tikka masala sauce</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$13.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/aloo/80/80.jpg" alt="Aloo Gobi Masala" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Aloo Gobi Masala</div>
+                            <div class="item-description">Cauliflower and potatoes cooked in a flavorful onion-tomato masala</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$12.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/dalmakhani/80/80.jpg" alt="Dal Makhani" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Dal Makhani</div>
+                            <div class="item-description">Slow-cooked black lentils in a buttery, creamy tomato base</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$12.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/saag/80/80.jpg" alt="Saag Paneer" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Saag Paneer</div>
+                            <div class="item-description">Paneer cubes simmered in spiced spinach puree, a wholesome North Indian classic</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$13.99</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NON-VEG Category -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-drumstick-bite non-veg-icon"></i> NON-VEG</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/chicken/80/80.jpg" alt="Chicken Curry" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Chicken Curry</div>
+                            <div class="item-description">Traditional Indian-style chicken simmered in onion-tomato gravy with house spices</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/tikka/80/80.jpg" alt="Chicken Tikka Masala" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Chicken Tikka Masala</div>
+                            <div class="item-description">Char-grilled chicken pieces in a creamy, spiced tikka masala</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$15.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/butter/80/80.jpg" alt="Butter Chicken" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Butter Chicken</div>
+                            <div class="item-description">Tender tandoori chicken simmered in a smooth, buttery tomato sauce</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$15.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/goat/80/80.jpg" alt="Goat Curry" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Goat Curry</div>
+                            <div class="item-description">Tender goat meat cooked slowly in traditional Indian spices</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$15.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/mughlai/80/80.jpg" alt="Chicken Mughlai" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Chicken Mughlai</div>
+                            <div class="item-description">Royal Mughlai-style chicken cooked in a rich cashew-cream gravy</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/chettinad/80/80.jpg" alt="Chicken Chettinad" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Chicken Chettinad</div>
+                            <div class="item-description">South Indian-style chicken curry infused with black pepper and coconut</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/goatstew/80/80.jpg" alt="Goat Stew" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Goat Stew</div>
+                            <div class="item-description">Slow-cooked goat in a mild, flavorful broth with South Indian notes</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$15.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/egg/80/80.jpg" alt="Egg Masala Curry" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Egg Masala Curry</div>
+                            <div class="item-description">Boiled eggs cooked in a thick, aromatic masala curry</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$12.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/mappas/80/80.jpg" alt="Chicken Mappas" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Chicken Mappas</div>
+                            <div class="item-description">Kerala-style chicken curry cooked with coconut milk and aromatic spices</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/murgh/80/80.jpg" alt="Tandoori Murgh Mussallam" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Tandoori Murgh Mussallam</div>
+                            <div class="item-description">Whole marinated chicken roasted and simmered in rich gravy</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/chickensaag/80/80.jpg" alt="Chicken Saag" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Chicken Saag</div>
+                            <div class="item-description">Chicken pieces cooked in a mildly spiced spinach-based curry</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/goatsaag/80/80.jpg" alt="Goat Saag" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Goat Saag</div>
+                            <div class="item-description">Goat meat simmered in a spiced spinach and herb gravy</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.99</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEAFOOD Category -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-fish seafood-icon"></i> SEA FOOD</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/shrimp/80/80.jpg" alt="Shrimp Tikka Masala" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Shrimp Tikka Masala</div>
+                            <div class="item-description">Juicy shrimp grilled and simmered in a creamy, spiced tikka masala sauce</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/fish/80/80.jpg" alt="Fish Tikka Masala" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Fish Tikka Masala</div>
+                            <div class="item-description">Tender fish fillets cooked in a rich, smoky tikka masala gravy</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.49</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/salmon/80/80.jpg" alt="Salmon Tikka Masala" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Salmon Tikka Masala</div>
+                            <div class="item-description">Grilled salmon pieces served in a luscious tikka masala with bold spices</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.49</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/cochin/80/80.jpg" alt="Cochin Shrimp Curry" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Cochin Shrimp Curry</div>
+                            <div class="item-description">Coastal-style shrimp curry with coconut, curry leaves, and Southern spices</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.49</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/jhinga/80/80.jpg" alt="Jhinga Masala" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Jhinga Masala</div>
+                            <div class="item-description">A hearty prawn curry cooked in a robust onion-tomato gravy with aromatic spices</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.99</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LAMB Category -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-drumstick-bite non-veg-icon"></i> LAMB</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/lambcurry/80/80.jpg" alt="Lamb Curry" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Lamb Curry</div>
+                            <div class="item-description">Succulent lamb cooked in a robust onion-tomato masala gravy</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$16.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/lambtikka/80/80.jpg" alt="Lamb Tikka Masala" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Lamb Tikka Masala</div>
+                            <div class="item-description">Grilled lamb chunks in a creamy, spiced tikka masala sauce</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$16.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/lambmapas/80/80.jpg" alt="Lamba Mapas" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Lamba Mapas</div>
+                            <div class="item-description">Lamb gently stewed in coconut milk with mild southern spices</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$16.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/lambrogan/80/80.jpg" alt="Lamb Rogan Josh" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Lamb Rogan Josh</div>
+                            <div class="item-description">Kashmiri-style lamb curry with rich, aromatic red chili and yogurt base</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$16.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/lambmappas/80/80.jpg" alt="Lamb Mappas" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Lamb Mappas</div>
+                            <div class="item-description">Coconut-rich lamb curry with mild spices</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$16.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/lambvindaloo/80/80.jpg" alt="Lamb Vindaloo" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Lamb Vindaloo</div>
+                            <div class="item-description">Spicy Goan curry with lamb and vinegar-based masala for a fiery kick</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$16.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Mandi Section -->
+<div class="menu-section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2><i class="fas fa-utensils"></i> Mandi</h2>
+        <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+    </div>
+    <div class="section-content">
+        <!-- VEG Category -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-leaf veg-icon"></i> VEG</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/paneermandi/80/80.jpg" alt="Paneer Mandi" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Paneer Mandi</div>
+                            <div class="item-description">Fragrant basmati rice slow-cooked with mild spices and topped with assorted vegetables</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$19.99</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NON-VEG Category -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-drumstick-bite non-veg-icon"></i> NON-VEG</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/eggmandi/80/80.jpg" alt="Juicy Egg Mandi" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Juicy Egg Mandi</div>
+                            <div class="item-description">Flavorful mandi rice served with boiled eggs and traditional Middle Eastern seasoning</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$19.99 (1pc) | $38.99 (2pc) | $57.99 (3pc) | $64.99 (4pc)</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/chickenmandi/80/80.jpg" alt="Juicy Chicken Mandi" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Juicy Chicken Mandi</div>
+                            <div class="item-description">Tender, spiced chicken served over fragrant mandi rice, slow-cooked to perfection</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$19.99 (1pc) | $38.99 (2pc) | $57.99 (3pc) | $64.99 (4pc)</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/afganchicken/80/80.jpg" alt="Afgani Chicken Mandi" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Afgani Chicken Mandi</div>
+                            <div class="item-description">Creamy Afghani-style marinated chicken grilled and layered on aromatic mandi rice</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$19.99 (1pc) | $38.99 (2pc) | $57.99 (3pc) | $64.99 (4pc)</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/muttonmandi/80/80.jpg" alt="Juciy Mutton Mandi" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Juciy Mutton Mandi</div>
+                            <div class="item-description">Succulent mutton pieces resting on spiced mandi rice with authentic flavors</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$21.99 (1pc) | $42.99 (2pc) | $62.99 (3pc) | $82.99 (4pc)</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/afganmutton/80/80.jpg" alt="Afgani Mutton Mandi" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Afgani Mutton Mandi</div>
+                            <div class="item-description">Rich and tender Afghani-style mutton served atop buttery, slow-cooked mandi rice</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$21.99 (1pc) | $42.99 (2pc) | $62.99 (3pc) | $82.99 (4pc)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- Biryani Section -->
+<div class="menu-section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2><i class="fas fa-utensils"></i> Biryani</h2>
+        <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+    </div>
+    <div class="section-content">
+        <!-- VEG Category -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-leaf veg-icon"></i> VEG</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/vegbiryani/80/80.jpg" alt="Vegetable Biryani" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Vegetable Biryani</div>
+                            <div class="item-description">Long-grain basmati rice cooked with fresh vegetables and aromatic spices, layered to perfection</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$12.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/paneerbiryani/80/80.jpg" alt="Paneer Biryani" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Paneer Biryani</div>
+                            <div class="item-description">Fragrant rice paired with marinated paneer cubes, cooked with saffron and whole spices</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$13.99</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- NON-VEG Category -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-drumstick-bite non-veg-icon"></i> NON-VEG</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/chickenbiryani/80/80.jpg" alt="Chicken Biryani" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Chicken Biryani</div>
+                            <div class="item-description">Classic biryani with tender chicken pieces, slow-cooked with spiced basmati rice</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$13.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/eggbiryani/80/80.jpg" alt="Egg Biryani" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Egg Biryani</div>
+                            <div class="item-description">A flavorful rice dish layered with boiled eggs and infused with fragrant herbs and masalas</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$12.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/lambbiryani/80/80.jpg" alt="Lamb Biryani" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Lamb Biryani</div>
+                            <div class="item-description">Juicy lamb simmered with saffron rice and whole spices for a rich, meaty biryani</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/muttonbiryani/80/80.jpg" alt="Mutton Biryani" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Mutton Biryani</div>
+                            <div class="item-description">Traditional mutton biryani made with bone-in pieces and deeply aromatic basmati rice</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/goatbiryani/80/80.jpg" alt="Goat Biryani" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Goat Biryani</div>
+                            <div class="item-description">Succulent goat meat layered with spiced rice and cooked to perfection in dum style</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.99</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SEA FOOD Category -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-fish seafood-icon"></i> SEA FOOD</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/shrimpbiryani/80/80.jpg" alt="Shrimp Biryani" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Shrimp Biryani</div>
+                            <div class="item-description">Fragrant basmati rice layered with juicy shrimp, slow-cooked with bold coastal spices</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+      <!-- Tandoori & Grills Section -->
+<div class="menu-section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2><i class="fas fa-fire"></i> Tandoori & Grills</h2>
+        <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+    </div>
+    <div class="section-content">
+        <!-- VEG Category -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-leaf veg-icon"></i> VEG</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/paneertikka/80/80.jpg" alt="Paneer Tikka" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Paneer Tikka</div>
+                            <div class="item-description">Cubes of paneer marinated in spiced yogurt, grilled to a golden, smoky finish</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$13.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/meltingpaneer/80/80.jpg" alt="Melting Paneer" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Melting Paneer</div>
+                            <div class="item-description">Soft paneer seasoned with herbs and grilled until creamy and melt-in-your-mouth tender</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$13.99</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- NON-VEG Category -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-drumstick-bite non-veg-icon"></i> NON-VEG</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/chickentikka/80/80.jpg" alt="Chicken Tikka" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Chicken Tikka</div>
+                            <div class="item-description">Boneless chicken chunks marinated in aromatic spices and roasted in the tandoor</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$13.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/tandoorichicken/80/80.jpg" alt="Tandoori Chicken (Bone In)" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Tandoori Chicken (Bone In)</div>
+                            <div class="item-description">Classic tandoori chicken on the bone, infused with bold spices and smoky flavor</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$13.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/maalaichicken/80/80.jpg" alt="Maalai Chicken" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Maalai Chicken</div>
+                            <div class="item-description">Creamy, mildly spiced chicken grilled to tender perfection in a white malai marinade</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$13.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/tandooriplatter/80/80.jpg" alt="Tandoori Platter" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Tandoori Platter</div>
+                            <div class="item-description">An assorted mix of tandoori favorites including chicken, shrimp, and paneer—perfect for sharing</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$18.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/lambchops/80/80.jpg" alt="Lamb Chops" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Lamb Chops</div>
+                            <div class="item-description">Juicy lamb chops marinated in Indian spices and flame-grilled to a tender finish</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$18.99</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SEA FOOD Category -->
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-fish seafood-icon"></i> SEA FOOD</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/tandoorishrimp/80/80.jpg" alt="Tandoori Shrimp" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Tandoori Shrimp</div>
+                            <div class="item-description">Jumbo shrimp marinated in spiced yogurt and grilled in the tandoor to smoky perfection</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$14.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/tandoorisalmon/80/80.jpg" alt="Tandoori Salmon" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Tandoori Salmon</div>
+                            <div class="item-description">Tender salmon fillet marinated in house spices and chargrilled with a hint of lemon</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$15.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <!-- Breads Section -->
+<div class="menu-section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2><i class="fas fa-bread-slice"></i> Breads</h2>
+        <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+    </div>
+    <div class="section-content">
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-leaf veg-icon"></i> Breads</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/plainnaan/80/80.jpg" alt="Plain Naan" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Plain Naan</div>
+                            <div class="item-description">Traditional soft and fluffy Indian flatbread baked in a tandoor</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$1.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/butternaan/80/80.jpg" alt="Butter Naan" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Butter Naan</div>
+                            <div class="item-description">Classic naan brushed with melted butter for rich flavor</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$1.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/garlicnaan/80/80.jpg" alt="Garlic Butter Naan" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Garlic Butter Naan</div>
+                            <div class="item-description">Naan topped with fresh garlic and butter, tandoor-baked to perfection</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$2.49</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/chillinaan/80/80.jpg" alt="Chilli Naan" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Chilli Naan</div>
+                            <div class="item-description">Spicy twist on naan infused with green chilies for a bold bite</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$1.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/cheesenaan/80/80.jpg" alt="Cheese Naan" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Cheese Naan</div>
+                            <div class="item-description">Soft naan stuffed with melted cheese for a gooey indulgence</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$2.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/onionkulcha/80/80.jpg" alt="Onion Kulcha" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Onion Kulcha</div>
+                            <div class="item-description">Flaky flatbread filled with spiced onion stuffing and herbs</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$2.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Desserts Section -->
+<div class="menu-section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2><i class="fas fa-ice-cream"></i> Desserts</h2>
+        <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+    </div>
+    <div class="section-content">
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-leaf veg-icon"></i> Desserts</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/gulabjamun/80/80.jpg" alt="Gulab Jamun" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Gulab Jamun</div>
+                            <div class="item-description">Deep-fried milk dumplings soaked in rose-flavored sugar syrup</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$3.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/rasmalai/80/80.jpg" alt="Ras Malai" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Ras Malai</div>
+                            <div class="item-description">Soft cottage cheese discs served in chilled saffron milk, garnished with nuts</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$3.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/doublekameetha/80/80.jpg" alt="Double Ka Meetha" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Double Ka Meetha</div>
+                            <div class="item-description">Hyderabadi-style bread pudding soaked in saffron syrup and garnished with dry fruits</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$3.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/pistachiokulfi/80/80.jpg" alt="Pistachio Kulfi" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Pistachio Kulfi</div>
+                            <div class="item-description">Traditional frozen dessert made with pistachios and thickened milk</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$3.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+      <!-- Falooda Section -->
+<div class="menu-section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2><i class="fas fa-glass-whiskey"></i> Falooda</h2>
+        <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+    </div>
+    <div class="section-content">
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-leaf veg-icon"></i> Falooda</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/falooda/80/80.jpg" alt="Orginal Falooda" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Orginal Falooda</div>
+                            <div class="item-description">A layered dessert with vermicelli, rose syrup, basil seeds, ice cream, and milk</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$9.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/pistachiofalooda/80/80.jpg" alt="Pistachio Falooda" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Pistachio Falooda</div>
+                            <div class="item-description">Nutty, creamy falooda topped with pistachio kulfi and crunchy toppings</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$9.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/ishasplfalooda/80/80.jpg" alt="Isha Spl Falooda" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Isha Spl Falooda</div>
+                            <div class="item-description">House-special deluxe falooda with mixed flavors, jellies, and royal toppings</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$9.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+      <!-- Sides Section -->
+<div class="menu-section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2><i class="fas fa-utensils"></i> Sides</h2>
+        <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+    </div>
+    <div class="section-content">
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-leaf veg-icon"></i> Sides</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/ricebowl/80/80.jpg" alt="Rice Bowl" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Rice Bowl</div>
+                            <div class="item-description">Steamed basmati rice, perfect to pair with curries and gravies</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$3.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/raita/80/80.jpg" alt="Raita" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Raita</div>
+                            <div class="item-description">Yogurt mixed with chopped vegetables and spices, served as a cooling side</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$1.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/mangochutney/80/80.jpg" alt="Mango Chutney" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Mango Chutney</div>
+                            <div class="item-description">Sweet and tangy mango relish with a hint of spice</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$1.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/onionchillies/80/80.jpg" alt="Fresh Onion Chillies" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Fresh Onion Chillies</div>
+                            <div class="item-description">Sliced onions and green chilies served with a dash of lemon</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$2.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/roastedpapad/80/80.jpg" alt="Roasted Papad" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Roasted Papad</div>
+                            <div class="item-description">Crisp and crunchy roasted lentil wafers with a smoky flavor</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$1.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+      <!-- Beverages Section -->
+<div class="menu-section">
+    <div class="section-header" onclick="toggleSection(this)">
+        <h2><i class="fas fa-glass-cheers"></i> Beverages</h2>
+        <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+    </div>
+    <div class="section-content">
+        <div class="category">
+            <div class="category-header" onclick="toggleCategory(this)">
+                <h3><i class="fas fa-leaf veg-icon"></i> Beverages</h3>
+                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="category-content">
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/mangolassi/80/80.jpg" alt="Mango Lassi" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Mango Lassi</div>
+                            <div class="item-description">A refreshing yogurt-based mango smoothie, thick and sweet</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$3.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/waterbottle/80/80.jpg" alt="Water Bottle" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Water Bottle</div>
+                            <div class="item-description">Chilled bottled water to keep you hydrated</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$1.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/masalchai/80/80.jpg" alt="Masala Chai" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Masala Chai</div>
+                            <div class="item-description">Aromatic Indian tea brewed with spices and milk</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$1.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/coffee/80/80.jpg" alt="Coffee" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Coffee</div>
+                            <div class="item-description">Classic hot coffee brewed to energize your meal</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$1.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/thumsup/80/80.jpg" alt="Thums Up" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Thums Up</div>
+                            <div class="item-description">Popular Indian cola beverage</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$2.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
+                        <img src="https://picsum.photos/seed/coke/80/80.jpg" alt="Coke" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Coke</div>
+                            <div class="item-description">Classic cola beverage</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$1.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+
+  </div>
+  
+  
+</div>
+<!-- MENU area end -->
+
+
+
+
+   <!-- rts footer area start -->
     <div class="rts-footer-one rts-section-gap2Top">
       <div class="shape-1">
         <img src="assets/images/footer/vector5.webp" alt="shape" />
@@ -493,129 +1921,108 @@
       <div class="shape-2">
         <img src="assets/images/footer/vector6.webp" alt="shape" />
       </div>
-     <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <!-- main footer area start -->
-            <div class="main-footer-wrapper-one">
-              <div
-                class="single-footer-wized-one logo-area"
-                data-sal="slide-up"
-                data-sal-delay="150"
-                data-sal-duration="800"
-              >
-                <a href="index.html" class="logo">
-                  <img
-                    src="assets/images/logo/noBgColor.png"
-                    alt="isha-logo"
-                    style="max-height: 100px"
-                  />
-                </a>
-                <p class="disc-f">
-                  Be the first to know about new collections, special events,
-                  and what’s going on at Our Place. We are creative
-                </p>
-                <!-- <div class="query-list">
-                  <span class="sub-text">Book a table</span>
-                  <a href="tel:88899900011">
-                    <span class="text-heading">888 999 000 11</span>
+    <!-- ...existing code... -->
+<div class="container">
+  <div class="row align-items-start">
+    <div class="col-lg-3">
+      <!-- Logo Area -->
+      <div class="single-footer-wized-one logo-area" data-sal="slide-up" data-sal-delay="150" data-sal-duration="800">
+        <a href="index.html" class="logo">
+          <img src="assets/images/logo/noBgColor.png" alt="isha-logo" style="max-height: 100px" />
+        </a>
+        <p class="disc-f">
+          Be the first to know about new collections, special events,
+          and what’s going on at Our Place. We are creative
+        </p>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <!-- Get In Touch -->
+      <div class="single-footer-wized-one get-in-touch" data-sal="slide-up" data-sal-delay="350" data-sal-duration="800">
+        <div class="footer-header-two get-touch">
+          <h6 class="title">Get In Touch</h6>
+          <div class="get-touch">
+            <ul>
+              <li>
+                <i class="fa-solid fa-location-dot"></i>1400 Military
+                Road, Benton,Arkansas
+              </li>
+              <li>
+                <a href="tel:39055123456"
+                  ><i class="fa-solid fa-phone-flip"></i>1
+                  501-794-6084</a
+                >
+              </li>
+              <li>
+                <a href="mailto:booking@webexample.com"
+                  ><i class="fa-solid fa-envelope-open"></i
+                  >booking@webexample.com</a
+                >
+              </li>
+            </ul>
+            <div class="rts-social-wrapper">
+              <ul>
+                <li>
+                  <a href="https://www.facebook.com/Ishathetasteofindia/" target="_blank">
+                    <i class="fa-brands fa-facebook-f"></i>
                   </a>
-                </div> -->
-              </div>
-              <div
-                class="single-footer-wized-one get-in-touch"
-                data-sal="slide-up"
-                data-sal-delay="350"
-                data-sal-duration="800"
-              >
-                <div class="footer-header-two get-touch">
-                  <h6 class="title">Get In Touch</h6>
-                  <div class="get-touch">
-                    <ul>
-                      <li>
-                        <i class="fa-solid fa-location-dot"></i>1400 Military
-                        Road, Benton,Arkansas
-                      </li>
-                      <li>
-                        <a href="tel:39055123456"
-                          ><i class="fa-solid fa-phone-flip"></i>1
-                          501-794-6084</a
-                        >
-                      </li>
-                      <li>
-                        <a href="mailto:booking@webexample.com"
-                          ><i class="fa-solid fa-envelope-open"></i
-                          >booking@webexample.com</a
-                        >
-                      </li>
-                    </ul>
-                    <div class="rts-social-wrapper">
-                      <ul>
-                        <li>
-                          <a
-                            href="https://www.facebook.com/Ishathetasteofindia/"
-                            target="_blank"
-                          >
-                            <i class="fa-brands fa-facebook-f"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://www.instagram.com/isha_tasteofindia/"
-                            target="_blank"
-                          >
-                            <i class="fa-brands fa-instagram"></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="https://g.co/kgs/9gLucER" target="_blank">
-                            <i class="fa-brands fa-google"></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="single-footer-wized-one pages"
-                data-sal="slide-up"
-                data-sal-delay="250"
-                data-sal-duration="800"
-              >
-                <div class="footer-header-two pages">
-                  <h6 class="title">Pages</h6>
-                  <div class="pages">
-                   <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="about.html">About Us</a></li>
-  <li><a href="menu-list.html">Our Menu</a></li>
-  <li><a href="gallery.html">Gallery</a></li>
-  <li><a href="contact.html">Contact us</a></li>
-</ul>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="single-footer-wized-one gallery"
-                data-sal="slide-up"
-                data-sal-delay="550"
-                data-sal-duration="800"
-              >
-                <div class="footer-gallery">
-  <img src="assets/images/project/g1.jpeg" alt="Image 1" />
-  <img src="assets/images/project/g2.jpeg" alt="Image 2" />
-  <img src="assets/images/project/g3.jpeg" alt="Image 3" />
-  <img src="assets/images/project/g4.jpeg" alt="Image 4" />
-  <img src="assets/images/project/g5.jpeg" alt="Image 5" />
-  <img src="assets/images/project/g6.jpeg" alt="Image 6" />
-</div>
-
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/isha_tasteofindia/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://g.co/kgs/9gLucER" target="_blank">
+                    <i class="fa-brands fa-google"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.yelp.com/biz/isha-the-taste-of-india-benton" target="_blank">
+                    <i class="fa-brands fa-yelp"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
-            <!-- ,main footer area end -->
           </div>
         </div>
       </div>
+    </div>
+    <div class="col-lg-3">
+      <!-- Pages -->
+      <div class="single-footer-wized-one pages" data-sal="slide-up" data-sal-delay="250" data-sal-duration="800">
+        <div class="footer-header-two pages">
+          <h6 class="title">Pages</h6>
+          <div class="pages">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="menu-list.html">Our Menu</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 d-flex align-items-center">
+  <!-- Gallery Images in two rows -->
+  <div class="single-footer-wized-one gallery" data-sal="slide-up" data-sal-delay="550" data-sal-duration="800">
+    <div class="footer-gallery-2row">
+      <div class="gallery-row">
+        <img src="assets/images/project/g1.jpeg" alt="Image 1" />
+        <img src="assets/images/project/g2.jpeg" alt="Image 2" />
+        <img src="assets/images/project/g3.jpeg" alt="Image 3" />
+      </div>
+      <div class="gallery-row">
+        <img src="assets/images/project/g4.jpeg" alt="Image 4" />
+        <img src="assets/images/project/g5.jpeg" alt="Image 5" />
+        <img src="assets/images/project/g6.jpeg" alt="Image 6" />
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ...existing code... -->
 
       <!-- copy right area start -->
       <div class="copyright-area">
@@ -739,5 +2146,6 @@
     <!-- main js -->
     <script src="assets/js/main.js"></script>
     <!-- header style two End -->
+
   </body>
 </html>

@@ -15078,9 +15078,6 @@ body.sal-disabled [data-sal|="flip"] {
   transform: none;
 }
 
-
-
-
 /*elements*/
 .rts-btn {
   padding: 20px 33px;
@@ -33116,7 +33113,6 @@ p.desc {
 .isha-about-content .title-img img {
   max-width: 120px;
   margin-bottom: 10px;
- 
 }
 @media (max-width: 991px) {
   .isha-about-inner {
@@ -33169,7 +33165,7 @@ p.desc {
 
 .rts-footer-one .pages ul,
 .rts-footer-one .get-touch ul {
-  padding-left: 0;
+  padding-left: 70px;
   margin-left: 0;
 }
 
@@ -33189,7 +33185,6 @@ p.desc {
     min-width: 0;
   }
 }
-
 
 .button-area-banner .rts-btn {
   font-size: 1.1rem;
@@ -33213,233 +33208,183 @@ p.desc {
   margin: 0;
 }
 
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e74c3c;
+}
 
+.nav-links {
+  display: flex;
+  list-style: none;
+}
 
+.nav-links li {
+  margin-left: 30px;
+}
 
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
 
+.nav-links a:hover {
+  color: #e74c3c;
+}
 
+/* Hero Section */
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/project/g10.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
 
+@media (max-width: 600px) {
+  .gallery-heading {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    padding: 0 8px;
+    text-align: center;
+  }
+}
 
+.gallery-heading {
+  color: white;
+}
 
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+}
 
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
 
+.btn {
+  display: inline-block;
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
 
+.btn:hover {
+  background-color: #c0392b;
+}
 
+/* Gallery Section */
+.gallery-section {
+  padding: 20px 10px;
+  max-width: 1200px;
+  margin-top: 30px;
+}
 
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
+.section-title h2 {
+  font-size: 36px;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+}
 
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+}
 
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
 
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
 
+.gallery-item:hover {
+  transform: translateY(-10px);
+}
 
+.gallery-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
 
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.gallery-item:hover .gallery-overlay {
+  height: 100%;
+}
 
+.gallery-caption {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
 
+.gallery-caption h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-      
-      
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #e74c3c;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #e74c3c;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/project/g10.jpeg');
-            background-size: cover;
-            background-position: center;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-        }
-
-
-        @media (max-width: 600px) {
-        .gallery-heading {
-             font-size: 1.3rem;
-              line-height: 1.4;
-              padding: 0 8px;
-             text-align: center;
-        }
-    }
-
-      .gallery-heading{
-          color: white;
-        }
-
-
-
-        .hero-content {
-            max-width: 800px;
-            padding: 0 20px;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: #e74c3c;
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #c0392b;
-        }
-        
-        /* Gallery Section */
-        .gallery-section {
-            padding: 20px 10px;
-            max-width: 1200px;
-            margin-top: 30px;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .section-title h2 {
-            font-size: 36px;
-            color: #333;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-        }
-      
-        
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .gallery-item:hover {
-            transform: translateY(-10px);
-        }
-        
-        .gallery-img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0,0,0,0.7);
-            overflow: hidden;
-            width: 100%;
-            height: 0;
-            transition: .5s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .gallery-item:hover .gallery-overlay {
-            height: 100%;
-        }
-        
-        .gallery-caption {
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .gallery-caption h3 {
-            margin-bottom: 10px;
-            font-size: 20px;  
-        }
-        
-         .gallery-sec {
-            padding: 20px 20px;
-            max-width: 1150px;
-            margin: 0 auto;
-        }
-
-
-
+.gallery-sec {
+  padding: 20px 20px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
 
 .footer-gallery img {
-  
   width: 80%;
   height: 70px; /* ✅ fixed height */
   object-fit: cover; /* ✅ crop image nicely */
@@ -33447,16 +33392,12 @@ p.desc {
 }
 
 .footer-gallery {
-  
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   max-width: 900px;
   padding: 20px 0;
 }
-
-
-
 
 /* Add this at the end of your style.css file */
 .no-extra-margin {
@@ -33474,3 +33415,570 @@ p.desc {
   margin-top: 20px; /* Adjust this value as per your design */
   margin-bottom: 20px;
 }
+
+.gall {
+  color: #fff !important;
+  font-family: var(--font-primary);
+  font-size: 40px; /* ya .title-banner ke barabar */
+  line-height: 1.2;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  margin-top: 70px;
+  text-transform: capitalize;
+  text-align: center; /* ya left/right, jaise aapko chahiye */
+}
+
+/* 2 row gallery for footer */
+.footer-gallery-2row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-gallery-2row .gallery-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.footer-gallery-2row img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* order page css  */
+
+.order-section {
+  background: #faf5f0;
+  padding: 40px 0 30px 0;
+  text-align: center;
+}
+.order-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+.order-title span {
+  color: #ff6a00;
+}
+.order-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.order-logos a {
+  display: block;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  padding: 30px 30px;
+  transition: transform 0.2s;
+  width: 320px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order-logos a:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.order-logos img {
+  max-width: 90%;
+  max-height: 120px;
+  object-fit: contain;
+}
+@media (max-width: 991px) {
+  .order-logos {
+    gap: 20px;
+  }
+  .order-logos a {
+    width: 220px;
+    height: 140px;
+    padding: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .order-title {
+    font-size: 2rem;
+  }
+  .order-logos {
+    flex-direction: column;
+    align-items: center;
+  }
+  .order-logos a {
+    width: 90vw;
+    max-width: 320px;
+  }
+}
+
+.order-img {
+  width: 350px;
+  height: 330px;
+  object-fit: contain; /* or use cover if you want crop-style */
+  border-radius: 10px;
+  background-color: #fff; /* Optional: give background in case image has transparency */
+  padding: 10px; /* Optional: white space around */
+}
+
+.footer-gallery-2row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gallery-row {
+  display: flex;
+  gap: 10px;
+}
+
+.gallery-row img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.single-footer-wized-one.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rts-footer-one .row {
+  align-items: stretch;
+}
+
+/* Gmail icon and text alignment */
+.get-touch a i {
+  vertical-align: middle;
+  margin-right: 6px;
+  font-size: 18px;
+}
+
+/* Footer gallery 2 row layout */
+.footer-gallery-2row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-gallery-2row .gallery-row {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start; /* left align, use center if you want center */
+}
+.footer-gallery-2row img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.rts-footer-one .row.g-4 > [class^="col-"] {
+  margin-bottom: 0 !important;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+.rts-footer-one .row.g-4 {
+  margin-right: -12px;
+  margin-left: -12px;
+}
+
+/* Pages list ko left laane ke liye */
+.rts-footer-one .pages ul {
+  padding-left: 80px !important; /* pehle 70px tha, ab 30px ya 20px karen */
+}
+
+/* Pages heading ko bhi left laane ke liye */
+.rts-footer-one .footer-header-two.pages .title {
+  padding-left: 60px !important; /* pehle 40px tha, ab 20px ya 0 karen */
+}
+
+.title {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+}
+
+
+
+/* Accordion styles for menu items */
+
+.accordion-button {
+  font-size: 1.55rem; /* Increases name + price text */
+  font-weight: 600;
+  
+}
+
+.accordion-body p {
+  font-size: 1.1rem; /* Increases description */
+  line-height: 1.6;
+  
+}
+
+/* Menu: Agar ek hi item ho to bhi left align rahe */
+.category-content {
+  justify-content: flex-start !important;
+  text-align: left;
+}
+
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.menu-section {
+  margin-bottom: 30px;
+}
+
+.menu-container .menu-section .section-header h2 {
+
+  font-size: 30px;
+}
+
+.section-header {
+  background: #c3a662;
+  padding: 24px 32px 24px 32px;
+  border-bottom: 1px solid #e0d3c2;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+.section-header h2 i {
+  margin-right: 10px;
+}
+.section-header h2 {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
+.section-header .section-icon {
+  margin-left: auto;
+  color: #a1887f;
+  font-size: 1.3rem;
+}
+
+.section-content {
+  padding: 10px 0;
+}
+
+.category {
+  margin-bottom: 20px;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.category-header h3 {
+  font-size: 2.5rem; /* ya apne hisaab se 16px, 15px, etc. */
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+}
+
+.category-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.menu-item {
+  width: calc(50% - 10px);
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.item-details {
+  flex-grow: 1;
+  display: flex;
+}
+
+.item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.item-description {
+  font-size: 14px;
+  color: #666;
+}
+
+.item-price {
+  font-weight: bold;
+  color: #d35400;
+  text-align: right;
+  width: 80px;
+}
+
+.category-header .category-icon i,
+.section-header .section-icon i {
+  color: black !important; /* Gold shade, apne hisaab se change kar sakte hain */
+  font-size: 1.5rem;
+  transition: color 0.2s;
+  
+}
+
+.category-content {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 菜单整体样式优化 */
+.rts-menu-area {
+    background-color: white; /* 淡化的背景色，与主色调协调 */
+    padding: 60px 0;
+}
+
+.banner-one-wrapper {
+    margin-bottom: 40px;
+}
+
+/* 菜单标题样式 - 使用 #c3a662 */
+.title-banner {
+    font-size: 42px;
+    font-weight: 700;
+    color: #5f4828; /* 深棕色作为标题文字 */
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.title-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: #c3a662; /* 使用 #c3a662 作为强调色 */
+    border-radius: 2px;
+}
+
+/* 菜单分类标题 - 使用 #6e5d38 */
+.menu-section .section-header {
+    background: #6e5d38; /* 使用 #6e5d38 作为分类标题背景 */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(110, 93, 56, 0.2);
+}
+
+.menu-section .section-header:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(110, 93, 56, 0.3);
+}
+
+.menu-section .section-header h2 {
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu-section .section-header i {
+    margin-right: 10px;
+}
+
+/* 菜单分类图标 - 使用 #c3a662 作为图标颜色 */
+.veg-icon, .non-veg-icon, .seafood-icon {
+    color: #c3a662; /* 使用 #c3a662 作为图标颜色 */
+    margin-right: 8px;
+}
+
+/* 菜品分类 - 使用 #c3a662 作为边框颜色 */
+.category .category-header {
+    background: #ffffff;
+    border-left: 4px solid #c3a662; /* 使用 #c3a662 作为边框 */
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(110, 93, 56, 0.05);
+}
+
+.category .category-header:hover {
+    background: #f9f6f0; /* 淡化的背景色 */
+    transform: translateX(5px);
+}
+
+.category .category-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* 菜单项样式 - 使用 #5f4828 作为悬停效果 */
+.menu-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(110, 93, 56, 0.05);
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(110, 93, 56, 0.1);
+}
+
+.item-details {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.item-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #f5f2e9; /* 淡化的边框色 */
+}
+
+
+
+.item-info {
+    flex: 1;
+}
+
+.item-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #5f4828; /* 使用 #5f4828 作为菜品名称 */
+    margin: 0 0 5px 0;
+}
+
+.item-description {
+    font-size: 14px;
+    color: #6e5d38; /* 使用 #6e5d38 作为描述文字 */
+    margin: 0;
+}
+
+/* 价格标签 - 使用 #c3a662 作为价格背景 */
+.item-price {
+    background: #c3a662; /* 使用 #c3a662 作为价格背景 */
+    color: white;
+    font-weight: 600;
+    padding: 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 折叠图标动画 - 使用 #c3a662 作为旋转动画 */
+.section-icon i,
+.category-icon i {
+    transition: transform 0.3s ease;
+    color: #c3a662; /* 使用 #c3a662 作为图标颜色 */
+}
+
+.menu-section .section-header.active .section-icon i,
+.category.active .category-icon i {
+    transform: rotate(180deg);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .title-banner {
+        font-size: 32px;
+    }
+    
+    .menu-item {
+        flex-direction: column;
+    }
+    
+    .item-details {
+        width: 100%;
+    }
+    
+    .item-price {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+/* Category heading font size kam karein */
+.category-header h3 {
+  font-size: 1.5rem !important;
+}
+
+/* Section heading font size kam karein */
+.section-header h2 {
+  font-size: 2.0rem !important;
+}
+
+/* Add this to your custom CSS or <style> tag */
+.rts-menu-area.menu-area-2.rts-section-gap {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+
