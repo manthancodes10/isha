@@ -33776,6 +33776,8 @@ p.desc {
 
 
 
+
+
 /* 菜单整体样式优化 */
 .rts-menu-area {
     background-color: white; /* 淡化的背景色，与主色调协调 */
@@ -33982,3 +33984,46 @@ p.desc {
 }
 
 
+
+
+/* Accordion arrow icons white */
+.section-header .section-icon i {
+  color: #fff !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ...existing code... */
+.gallery-section {
+  width: 100%;
+  max-width: 1200px; /* ya jitna aapko chahiye */
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.gallery-item {
+  flex: 0 1 320px;
+  margin-bottom: 24px;
+}
+/* ...existing code... */
