@@ -33212,6 +33212,7 @@ p.desc {
   font-size: 24px;
   font-weight: bold;
   color: #e74c3c;
+  margin-left: 10px;
 }
 
 .nav-links {
@@ -33413,7 +33414,6 @@ p.desc {
 }
 .button-area-banner.fix-spacing {
   margin-top: 20px; /* Adjust this value as per your design */
-  margin-bottom: 20px;
 }
 
 .gall {
@@ -33423,9 +33423,18 @@ p.desc {
   line-height: 1.2;
   letter-spacing: 2px;
   margin-bottom: 30px;
-  margin-top: 70px;
   text-transform: capitalize;
   text-align: center; /* ya left/right, jaise aapko chahiye */
+}
+
+
+/* Reduce space between View Full Menu button and Gallery heading */
+.button-area-banner.fix-spacing {
+  margin-bottom: -15px !important; /* pehle yeh 60px ya zyada ho sakta hai */
+}
+
+.gall {
+  margin-top: -20px !important; /* pehle yeh 60px ya zyada ho sakta hai */
 }
 
 /* 2 row gallery for footer */
@@ -34026,4 +34035,43 @@ p.desc {
   flex: 0 1 320px;
   margin-bottom: 24px;
 }
+/* ...existing code... */
+
+
+
+
+/* Nav menu items ke beech ka gap kam karein */
+.main-nav-desk nav ul {
+  display: flex;
+  gap: 5px; /* pehle yeh 40px ya zyada ho sakta hai, 20px ya kam kar dein */
+  justify-content: center;
+  align-items: center;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.main-nav-desk nav ul li {
+  margin: 0 !important; /* agar margin diya hai to hata dein */
+  padding: 0 5px;       /* left-right padding kam rakhein */
+}
+
+
+
+
+/* ...existing code... */
+
+/* Mobile fix: Stack menu items vertically */
+@media (max-width: 767px) {
+  .category-content {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .menu-item {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
+
 /* ...existing code... */
