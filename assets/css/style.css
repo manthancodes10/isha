@@ -34007,9 +34007,33 @@ p.desc {
 
 
 
+/* Footer responsive fix for mobile */
+@media (max-width: 991.98px) {
+  .rts-footer-one .container > .row > [class^="col-lg-3"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+    display: block;
+  }
+  .rts-footer-one .container > .row {
+    flex-direction: column !important;
+  }
+  .single-footer-wized-one {
+    text-align: center;
+  }
+  .footer-gallery-2row {
+    justify-content: center;
+  }
+}
 
-
-
+/* Add this to your style.css */
+@media (max-width: 991.98px) {
+  .single-footer-wized-one {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    text-align: left !important;
+  }
+}
 
 
 
