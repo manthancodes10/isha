@@ -32516,9 +32516,9 @@ p.desc {
   height: 10px;
   width: 10px;
   line-height: 10px;
-  transform: rotate(45deg) translateY(-50%);
+  /* transform: rotate(45deg) translateY(-50%); */
   margin: 0 6px;
-  background: var(--color-primary);
+  /* background: var(--color-primary); */
   display: block;
   left: 0;
   top: 50%;
@@ -33598,13 +33598,17 @@ p.desc {
 
 /* Pages list ko left laane ke liye */
 .rts-footer-one .pages ul {
-  padding-left: 80px !important; /* pehle 70px tha, ab 30px ya 20px karen */
+  padding-left: 50px !important; /* pehle 70px tha, ab 30px ya 20px karen */
 }
 
 /* Pages heading ko bhi left laane ke liye */
 .rts-footer-one .footer-header-two.pages .title {
-  padding-left: 60px !important; /* pehle 40px tha, ab 20px ya 0 karen */
+  padding-left: 40px !important; /* pehle 40px tha, ab 20px ya 0 karen */
 }
+
+
+
+
 
 .title {
   font-family: "DM Sans", Arial, Helvetica, sans-serif;
