@@ -324,70 +324,74 @@
    
          <div class="menu-container">
         <!-- First Impression Section -->
-        <div class="menu-section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <h2><i class="fas fa-star"></i> First Impression</h2>
-                <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+       <div class="menu-section">
+  <div class="section-header" onclick="toggleSection(this)">
+    <h2><i class="fas fa-star"></i> First Impression</h2>
+    <div class="section-icon"><i class="fas fa-chevron-down"></i></div>
+  </div>
+  <div class="section-content">
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <h3><i class="fas fa-leaf veg-icon"></i> VEG</h3>
+        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+      </div>
+      <div class="category-content">
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="assets/images/menu/f57d19ee-6f21-4eb1-b9bd-a45517ff6378.jpeg" alt="Samosa" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Samosa</div>
+              <div class="item-description">Golden-fried pastry filled with spiced potatoes and peas, served with tangy chutney</div>
             </div>
-            <div class="section-content">
-                <div class="category">
-                    <div class="category-header" onclick="toggleCategory(this)">
-                        <h3><i class="fas fa-leaf veg-icon"></i> VEG</h3>
-                        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
-                    </div>
-                    <div class="category-content">
-                        <div class="menu-item">
-                            <div class="item-details">
-                                <img src="assets/images/menu/f57d19ee-6f21-4eb1-b9bd-a45517ff6378.jpeg" alt="Samosa" class="item-image">
-                                <div class="item-info">
-                                    <div class="item-name">Samosa</div>
-                                    <div class="item-description">Golden-fried pastry filled with spiced potatoes and peas, served with tangy chutney</div>
-                                </div>
-                            </div>
-                            <div class="item-price">$4.99</div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="item-details">
-                                <img src="assets/images/menu/Baby Spinach Salad.jpeg" alt="Baby Spinach Chat" class="item-image">
-                                <div class="item-info">
-                                    <div class="item-name">Baby Spinach Chat</div>
-                                    <div class="item-description">Crisp spinach leaves topped with yogurt, tamarind, and mint chutneys</div>
-                                </div>
-                            </div>
-                            <div class="item-price">$10.99</div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="item-details">
-                                <img src="assets/images/menu/Brussels Sprouts Pakora recipe on Food52.jpeg" alt="Crispy Brussel Sprout Pakora" class="item-image">
-                                <div class="item-info">
-                                    <div class="item-name">Crispy Brussel Sprout Pakora</div>
-                                    <div class="item-description">Crunchy gram flour fritters made with fresh brussels sprouts</div>
-                                </div>
-                            </div>
-                            <div class="item-price">$10.99</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="category">
-                    <div class="category-header" onclick="toggleCategory(this)">
-                        <h3><i class="fas fa-drumstick-bite non-veg-icon"></i> NON-VEG</h3>
-                        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
-                    </div>
-                    <div class="category-content">
-                        <div class="menu-item">
-                            <div class="item-details">
-                                <img src="assets/images/menu/Golden Crispy Calamari Rings Served with Creamy Tartar Sauce for the Perfect Snack.jpeg" alt="Lemon Pepper Calamari" class="item-image">
-                                <div class="item-info">
-                                    <div class="item-name">Lemon Pepper Calamari</div>
-                                    <div class="item-description">Calamari rings seasoned with zesty lemon-pepper, fried until crispy</div>
-                                </div>
-                            </div>
-                            <div class="item-price">$11.99</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <div class="item-price">$6.99</div>
         </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="assets/images/menu/Baby Spinach Salad.jpeg" alt="Baby Spinach Chat" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Baby Spinach Chat</div>
+              <div class="item-description">Crisp spinach leaves topped with yogurt, tamarind, and mint chutneys</div>
+            </div>
+          </div>
+          <div class="item-price">$12.99</div>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="assets/images/menu/Brussels Sprouts Pakora recipe on Food52.jpeg" alt="Crispy Brussel Sprout Pakora" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Crispy Brussel Sprout Pakora</div>
+              <div class="item-description">Crunchy gram flour fritters made with fresh brussels sprouts</div>
+            </div>
+          </div>
+          <div class="item-price">$12.99</div> <!-- Updated from $10.99 -->
+        </div>
+      </div>
+    </div>
+
+    <div class="category">
+      <div class="category-header" onclick="toggleCategory(this)">
+        <h3><i class="fas fa-drumstick-bite non-veg-icon"></i> NON-VEG</h3>
+        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+      </div>
+      <div class="category-content">
+        <div class="menu-item">
+          <div class="item-details">
+            <img src="assets/images/menu/Golden Crispy Calamari Rings Served with Creamy Tartar Sauce for the Perfect Snack.jpeg" alt="Lemon Pepper Calamari" class="item-image">
+            <div class="item-info">
+              <div class="item-name">Lemon Pepper Calamari</div>
+              <div class="item-description">Calamari rings seasoned with zesty lemon-pepper, fried until crispy</div>
+            </div>
+          </div>
+          <div class="item-price">$13.99</div> <!-- Updated from $11.99 -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
         
         <!-- Soup Section -->
         <div class="menu-section">
@@ -501,103 +505,105 @@
   <div class="section-content">
 
     <!-- VEG Category -->
-    <div class="category">
-      <div class="category-header" onclick="toggleCategory(this)">
-        <h3><i class="fas fa-leaf veg-icon"></i> VEG</h3>
-        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
-      </div>
-      <div class="category-content">
+   <div class="category">
+  <div class="category-header" onclick="toggleCategory(this)">
+    <h3><i class="fas fa-leaf veg-icon"></i> VEG</h3>
+    <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+  </div>
+  <div class="category-content">
 
-        <!-- VEG Items -->
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Honey Chilli Paneer — Cupcakeree.jpeg" alt="Chilli Paneer" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Chilli Paneer</div>
-              <div class="item-description">Paneer cubes stir-fried with onions, peppers, and spicy Indo-Chinese sauce</div>
-            </div>
-          </div>
-          <div class="item-price">$11.99</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/images (1).jpeg" alt="Jalapeno Paneer" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Jalapeno Paneer</div>
-              <div class="item-description">Spicy fusion of paneer and jalapeños tossed in a tangy, bold seasoning</div>
-            </div>
-          </div>
-          <div class="item-price">$11.99</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Baby Corn Manchurian - Blendofspicesbysara.jpeg" alt="Baby Corn Manchuria" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Baby Corn Manchuria</div>
-              <div class="item-description">Crispy baby corn fritters tossed in a flavorful Manchurian sauce</div>
-            </div>
-          </div>
-          <div class="item-price">$11.99</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Crispy Babycorn Chilli.jpeg" alt="Chilli Baby Corn" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Chilli Baby Corn</div>
-              <div class="item-description">Stir-fried baby corn with bell peppers and a kick of chilli garlic flavor</div>
-            </div>
-          </div>
-          <div class="item-price">$11.99</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Gobi 65.jpeg" alt="Gobi 65" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Gobi 65</div>
-              <div class="item-description">Deep-fried cauliflower bites coated in a fiery South Indian marinade</div>
-            </div>
-          </div>
-          <div class="item-price">$11.99</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Baked Gobi Manchurian Recipe , Oven Roasted Gobi Manchurian Recipe.jpeg" alt="Gobi Manchuria" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Gobi Manchuria</div>
-              <div class="item-description">Crispy cauliflower florets cooked in a savory Manchurian gravy</div>
-            </div>
-          </div>
-          <div class="item-price">$11.99</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Air Fryer Crispy Brussels Sprouts With Honey Butter.jpeg" alt="Crispy Brussel Sprouts" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Crispy Brussel Sprouts</div>
-              <div class="item-description">Flash-fried brussels sprouts tossed with spices for a crunchy twist</div>
-            </div>
-          </div>
-          <div class="item-price">$11.99</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Baby Spinach Salad (1).jpeg" alt="Baby Spinach Chaat" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Baby Spinach Chaat</div>
-              <div class="item-description">Crunchy spinach leaves layered with chutneys, yogurt, and spice dust</div>
-            </div>
-          </div>
-          <div class="item-price">$11.99</div>
+    <!-- VEG Items -->
+    <div class="menu-item">
+      <div class="item-details">
+        <img src="assets/images/menu/Honey Chilli Paneer — Cupcakeree.jpeg" alt="Chilli Paneer" class="item-image">
+        <div class="item-info">
+          <div class="item-name">Chilli Paneer</div>
+          <div class="item-description">Paneer cubes stir-fried with onions, peppers, and spicy Indo-Chinese sauce</div>
         </div>
       </div>
+      <div class="item-price">$13.99</div>
     </div>
+
+    <div class="menu-item">
+      <div class="item-details">
+        <img src="assets/images/menu/images (1).jpeg" alt="Jalapeno Paneer" class="item-image">
+        <div class="item-info">
+          <div class="item-name">Jalapeno Paneer</div>
+          <div class="item-description">Spicy fusion of paneer and jalapeños tossed in a tangy, bold seasoning</div>
+        </div>
+      </div>
+      <div class="item-price">$13.99</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-details">
+        <img src="assets/images/menu/Baby Corn Manchurian - Blendofspicesbysara.jpeg" alt="Baby Corn Manchuria" class="item-image">
+        <div class="item-info">
+          <div class="item-name">Baby Corn Manchuria</div>
+          <div class="item-description">Crispy baby corn fritters tossed in a flavorful Manchurian sauce</div>
+        </div>
+      </div>
+      <div class="item-price">$13.99</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-details">
+        <img src="assets/images/menu/Crispy Babycorn Chilli.jpeg" alt="Chilli Baby Corn" class="item-image">
+        <div class="item-info">
+          <div class="item-name">Chilli Baby Corn</div>
+          <div class="item-description">Stir-fried baby corn with bell peppers and a kick of chilli garlic flavor</div>
+        </div>
+      </div>
+      <div class="item-price">$13.99</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-details">
+        <img src="assets/images/menu/Gobi 65.jpeg" alt="Gobi 65" class="item-image">
+        <div class="item-info">
+          <div class="item-name">Gobi 65</div>
+          <div class="item-description">Deep-fried cauliflower bites coated in a fiery South Indian marinade</div>
+        </div>
+      </div>
+      <div class="item-price">$13.99</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-details">
+        <img src="assets/images/menu/Baked Gobi Manchurian Recipe , Oven Roasted Gobi Manchurian Recipe.jpeg" alt="Gobi Manchuria" class="item-image">
+        <div class="item-info">
+          <div class="item-name">Gobi Manchuria</div>
+          <div class="item-description">Crispy cauliflower florets cooked in a savory Manchurian gravy</div>
+        </div>
+      </div>
+      <div class="item-price">$13.99</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-details">
+        <img src="assets/images/menu/Air Fryer Crispy Brussels Sprouts With Honey Butter.jpeg" alt="Crispy Brussel Sprouts" class="item-image">
+        <div class="item-info">
+          <div class="item-name">Crispy Brussel Sprouts</div>
+          <div class="item-description">Flash-fried brussels sprouts tossed with spices for a crunchy twist</div>
+        </div>
+      </div>
+      <div class="item-price">$13.99</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-details">
+        <img src="assets/images/menu/Baby Spinach Salad (1).jpeg" alt="Baby Spinach Chaat" class="item-image">
+        <div class="item-info">
+          <div class="item-name">Baby Spinach Chaat</div>
+          <div class="item-description">Crunchy spinach leaves layered with chutneys, yogurt, and spice dust</div>
+        </div>
+      </div>
+      <div class="item-price">$13.99</div>
+    </div>
+    
+  </div>
+</div>
+
 
     <!-- NON-VEG Category -->
     <div class="category">
@@ -607,96 +613,97 @@
       </div>
       <div class="category-content">
 
-        <!-- NON-VEG Items -->
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Chicken Keema Samosa _ Minced Chicken Samosa - Mozis Menu.jpeg" alt="Chicken Samosa" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Chicken Samosa (4 pieces)</div>
-              <div class="item-description">Flaky pastry pockets filled with spiced minced chicken, fried until golden</div>
-            </div>
-          </div>
-          <div class="item-price">$4.99</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Chicken 65 Recipe _ Restaurant Style - Swasthi's Recipes.jpeg" alt="Chicken 65" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Chicken 65</div>
-              <div class="item-description">South Indian–style crispy chicken bites tossed in a fiery red masala</div>
-            </div>
-          </div>
-          <div class="item-price">$12.99</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Crispy Honey Chilli Chicken.jpeg" alt="Chilli Chicken" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Chilli Chicken</div>
-              <div class="item-description">Boneless chicken sautéed with peppers, onions, and spicy Indo-Chinese sauce</div>
-            </div>
-          </div>
-          <div class="item-price">$12.99</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Chicken Manchurian.jpeg" alt="Chicken Manchuria" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Chicken Manchuria</div>
-              <div class="item-description">Fried chicken pieces simmered in a savory Manchurian gravy</div>
-            </div>
-          </div>
-          <div class="item-price">$12.99</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Chicken Pakora Recipe – Cookin' with Mima.jpeg" alt="Benton Chicken Pakoda" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Benton Chicken Pakoda</div>
-              <div class="item-description">Crunchy chicken fritters marinated in house-blend spices, a perfect tea-time snack</div>
-            </div>
-          </div>
-          <div class="item-price">$12.99</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Buffalo Chicken Lollipops.jpeg" alt="Chicken Lollipop" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Chicken Lollipop</div>
-              <div class="item-description">Juicy chicken drumettes shaped like lollipops, deep-fried and served with spicy sauce</div>
-            </div>
-          </div>
-          <div class="item-price">$12.99</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Spicy Jalapeno Chicken Recipe.jpeg" alt="Jalapeno Chicken" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Jalapeno Chicken</div>
-              <div class="item-description">Chicken bites tossed with jalapeños and onions for a bold, spicy kick</div>
-            </div>
-          </div>
-          <div class="item-price">$12.99</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-details">
-            <img src="assets/images/menu/Ginger Chicken.jpeg" alt="Ginger Flex Chicken" class="item-image">
-            <div class="item-info">
-              <div class="item-name">Ginger Flex Chicken</div>
-              <div class="item-description">Tender chicken strips infused with ginger and stir-fried in a tangy sauce</div>
-            </div>
-          </div>
-          <div class="item-price">$12.99</div>
-        </div>
-
+  <!-- NON-VEG Items -->
+  <div class="menu-item">
+    <div class="item-details">
+      <img src="assets/images/menu/Chicken Keema Samosa _ Minced Chicken Samosa - Mozis Menu.jpeg" alt="Chicken Samosa" class="item-image">
+      <div class="item-info">
+        <div class="item-name">Chicken Samosa (4 pieces)</div>
+        <div class="item-description">Flaky pastry pockets filled with spiced minced chicken, fried until golden</div>
       </div>
+    </div>
+    <div class="item-price">$5.99</div> <!-- Updated from $4.99 -->
+  </div>
+
+  <div class="menu-item">
+    <div class="item-details">
+      <img src="assets/images/menu/Chicken 65 Recipe _ Restaurant Style - Swasthi's Recipes.jpeg" alt="Chicken 65" class="item-image">
+      <div class="item-info">
+        <div class="item-name">Chicken 65</div>
+        <div class="item-description">South Indian–style crispy chicken bites tossed in a fiery red masala</div>
+      </div>
+    </div>
+    <div class="item-price">$13.99</div>
+  </div>
+
+  <div class="menu-item">
+    <div class="item-details">
+      <img src="assets/images/menu/Crispy Honey Chilli Chicken.jpeg" alt="Chilli Chicken" class="item-image">
+      <div class="item-info">
+        <div class="item-name">Chilli Chicken</div>
+        <div class="item-description">Boneless chicken sautéed with peppers, onions, and spicy Indo-Chinese sauce</div>
+      </div>
+    </div>
+    <div class="item-price">$13.99</div>
+  </div>
+
+  <div class="menu-item">
+    <div class="item-details">
+      <img src="assets/images/menu/Chicken Manchurian.jpeg" alt="Chicken Manchuria" class="item-image">
+      <div class="item-info">
+        <div class="item-name">Chicken Manchuria</div>
+        <div class="item-description">Fried chicken pieces simmered in a savory Manchurian gravy</div>
+      </div>
+    </div>
+    <div class="item-price">$13.99</div>
+  </div>
+
+  <div class="menu-item">
+    <div class="item-details">
+      <img src="assets/images/menu/Chicken Pakora Recipe – Cookin' with Mima.jpeg" alt="Benton Chicken Pakoda" class="item-image">
+      <div class="item-info">
+        <div class="item-name">Benton Chicken Pakoda</div>
+        <div class="item-description">Crunchy chicken fritters marinated in house-blend spices, a perfect tea-time snack</div>
+      </div>
+    </div>
+    <div class="item-price">$13.99</div>
+  </div>
+
+  <div class="menu-item">
+    <div class="item-details">
+      <img src="assets/images/menu/Buffalo Chicken Lollipops.jpeg" alt="Chicken Lollipop" class="item-image">
+      <div class="item-info">
+        <div class="item-name">Chicken Lollipop</div>
+        <div class="item-description">Juicy chicken drumettes shaped like lollipops, deep-fried and served with spicy sauce</div>
+      </div>
+    </div>
+    <div class="item-price">$13.99</div>
+  </div>
+
+  <div class="menu-item">
+    <div class="item-details">
+      <img src="assets/images/menu/Spicy Jalapeno Chicken Recipe.jpeg" alt="Jalapeno Chicken" class="item-image">
+      <div class="item-info">
+        <div class="item-name">Jalapeno Chicken</div>
+        <div class="item-description">Chicken bites tossed with jalapeños and onions for a bold, spicy kick</div>
+      </div>
+    </div>
+    <div class="item-price">$13.99</div>
+  </div>
+
+  <div class="menu-item">
+    <div class="item-details">
+      <img src="assets/images/menu/Ginger Chicken.jpeg" alt="Ginger Flex Chicken" class="item-image">
+      <div class="item-info">
+        <div class="item-name">Ginger Flex Chicken</div>
+        <div class="item-description">Tender chicken strips infused with ginger and stir-fried in a tangy sauce</div>
+      </div>
+    </div>
+    <div class="item-price">$13.99</div>
+  </div>
+
+</div>
+
     </div>
 
   </div>
@@ -727,7 +734,7 @@
               <div class="item-description">Southern-style crispy fried fish seasoned with bold, homestyle spices.</div>
             </div>
           </div>
-          <div class="item-price">$13.99</div>
+          <div class="item-price">$15.99</div>
         </div>
 
         <!-- Chilli Fish -->
@@ -739,7 +746,7 @@
               <div class="item-description">Boneless fish chunks tossed in a spicy chilli-garlic sauce with bell peppers.</div>
             </div>
           </div>
-          <div class="item-price">$13.99</div>
+          <div class="item-price">$15.99</div>
         </div>
 
         <!-- Majestic Shrimp -->
@@ -751,7 +758,7 @@
               <div class="item-description">Succulent shrimp marinated in rich spices and stir-fried with herbs and chilies.</div>
             </div>
           </div>
-          <div class="item-price">$13.99</div>
+          <div class="item-price">$15.99</div>
         </div>
 
         <!-- Lemon Pepper Calamari -->
@@ -763,7 +770,7 @@
               <div class="item-description">Tender calamari rings, lightly fried and finished with zesty lemon-pepper seasoning.</div>
             </div>
           </div>
-          <div class="item-price">$13.99</div>
+          <div class="item-price">$15.99</div>
         </div>
 
       </div>
@@ -796,7 +803,7 @@
               <div class="item-description">Steamed dumplings filled with spiced mixed vegetables, served with chutney.</div>
             </div>
           </div>
-          <div class="item-price">$10.99</div>
+          <div class="item-price">$11.99</div>
         </div>
 
         <!-- Butter Veg Momo -->
@@ -808,7 +815,7 @@
               <div class="item-description">Soft veg momos tossed in a rich, creamy butter sauce for extra indulgence.</div>
             </div>
           </div>
-          <div class="item-price">$10.99</div>
+          <div class="item-price">$11.99</div>
         </div>
 
         <!-- Malai Veg Momo -->
@@ -820,7 +827,7 @@
               <div class="item-description">Mildly spiced veg dumplings coated in a silky malai (cream-based) sauce.</div>
             </div>
           </div>
-          <div class="item-price">$10.99</div>
+          <div class="item-price">$11.99</div>
         </div>
       </div>
     </div>
@@ -841,7 +848,7 @@
               <div class="item-description">Juicy dumplings stuffed with flavorful minced chicken and aromatic herbs.</div>
             </div>
           </div>
-          <div class="item-price">$10.99</div>
+          <div class="item-price">$11.99</div>
         </div>
 
         <!-- Butter Chicken Momo -->
@@ -853,7 +860,7 @@
               <div class="item-description">Chicken momos smothered in a creamy, buttery tomato-based sauce.</div>
             </div>
           </div>
-          <div class="item-price">$10.99</div>
+          <div class="item-price">$11.99</div>
         </div>
 
         <!-- Malai Chicken Momo -->
@@ -865,7 +872,7 @@
               <div class="item-description">Tender chicken momos enriched with a smooth, mildly spiced cream sauce.</div>
             </div>
           </div>
-          <div class="item-price">$10.99</div>
+          <div class="item-price">$11.99</div>
         </div>
       </div>
     </div>
@@ -896,7 +903,7 @@
                             <div class="item-description">Yellow lentils tempered with garlic, cumin, and ghee for a classic comfort dish</div>
                         </div>
                     </div>
-                    <div class="item-price">$12.99</div>
+                    <div class="item-price">$13.99</div>
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
@@ -906,7 +913,7 @@
                             <div class="item-description">Soft vegetable and paneer dumplings simmered in a creamy, mildly spiced gravy</div>
                         </div>
                     </div>
-                    <div class="item-price">$12.99</div>
+                    <div class="item-price">$13.99</div>
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
@@ -926,7 +933,7 @@
                             <div class="item-description">Spiced chickpea curry served with fluffy, deep-fried bhature bread</div>
                         </div>
                     </div>
-                    <div class="item-price">$12.99</div>
+                    <div class="item-price">$13.99</div>
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
@@ -946,7 +953,7 @@
                             <div class="item-description">Cauliflower and potatoes cooked in a flavorful onion-tomato masala</div>
                         </div>
                     </div>
-                    <div class="item-price">$12.99</div>
+                    <div class="item-price">$13.99</div>
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
@@ -956,7 +963,7 @@
                             <div class="item-description">Slow-cooked black lentils in a buttery, creamy tomato base</div>
                         </div>
                     </div>
-                    <div class="item-price">$12.99</div>
+                    <div class="item-price">$13.99</div>
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
@@ -966,200 +973,202 @@
                             <div class="item-description">Paneer cubes simmered in spiced spinach puree, a wholesome North Indian classic</div>
                         </div>
                     </div>
-                    <div class="item-price">$13.99</div>
+                    <div class="item-price">$14.99</div>
                 </div>
             </div>
         </div>
 
         <!-- NON-VEG Category -->
         <div class="category">
-            <div class="category-header" onclick="toggleCategory(this)">
-                <h3><i class="fas fa-drumstick-bite non-veg-icon"></i> NON-VEG</h3>
-                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
-            </div>
-            <div class="category-content">
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Easy Indian Curry Chicken Recipe for Flavor Lovers.jpeg" alt="Chicken Curry" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Chicken Curry</div>
-                            <div class="item-description">Traditional Indian-style chicken simmered in onion-tomato gravy with house spices</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$14.99</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Chicken Tikka Masala - Simply Recipes - Fewer Worries, More Delight.jpeg" alt="Chicken Tikka Masala" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Chicken Tikka Masala</div>
-                            <div class="item-description">Char-grilled chicken pieces in a creamy, spiced tikka masala</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$15.99</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Authentic Butter Chicken Recipe – Rich, Creamy & Flavorful.jpeg" alt="Butter Chicken" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Butter Chicken</div>
-                            <div class="item-description">Tender tandoori chicken simmered in a smooth, buttery tomato sauce</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$15.99</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Nepal Goat Curry Recipe.jpeg" alt="Goat Curry" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Goat Curry</div>
-                            <div class="item-description">Tender goat meat cooked slowly in traditional Indian spices</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$15.99</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Mughlai Chicken- mouthwatering delicious Chicken Gravy Recipe.jpeg" alt="Chicken Mughlai" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Chicken Mughlai</div>
-                            <div class="item-description">Royal Mughlai-style chicken cooked in a rich cashew-cream gravy</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$14.99</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Chicken Chettinad Recipe.jpeg" alt="Chicken Chettinad" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Chicken Chettinad</div>
-                            <div class="item-description">South Indian-style chicken curry infused with black pepper and coconut</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$14.99</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Goat Meat stew with cocoyams  – AFROVITALITYEATS - Copy.jpeg" alt="Goat Stew" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Goat Stew</div>
-                            <div class="item-description">Slow-cooked goat in a mild, flavorful broth with South Indian notes</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$15.99</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/13M views · 149 reactions _ Egg Masala Curry _ curry, egg, chef _ Egg Masala Curry by Chef Sanjyot Keer _ By Sanjyot Keer _ Facebook.jpeg" alt="Egg Masala Curry" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Egg Masala Curry</div>
-                            <div class="item-description">Boiled eggs cooked in a thick, aromatic masala curry</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$12.99</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Chicken Mappas _ Video - NISH KITCHEN.jpeg" alt="Chicken Mappas" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Chicken Mappas</div>
-                            <div class="item-description">Kerala-style chicken curry cooked with coconut milk and aromatic spices</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$14.99</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Murg Musallam Biryani Recipe in Hindi.jpeg" alt="Tandoori Murgh Mussallam" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Tandoori Murgh Mussallam</div>
-                            <div class="item-description">Whole marinated chicken roasted and simmered in rich gravy</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$14.99</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Chicken Saag - Palak Chicken (Chicken Spinach Curry).jpeg" alt="Chicken Saag" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Chicken Saag</div>
-                            <div class="item-description">Chicken pieces cooked in a mildly spiced spinach-based curry</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$14.99</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Goat Meat Curry (Khasi Ko Masu) खसीको मासु.jpeg" alt="Goat Saag" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Goat Saag</div>
-                            <div class="item-description">Goat meat simmered in a spiced spinach and herb gravy</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$14.99</div>
+    <div class="category-header" onclick="toggleCategory(this)">
+        <h3><i class="fas fa-drumstick-bite non-veg-icon"></i> NON-VEG</h3>
+        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+    </div>
+    <div class="category-content">
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Easy Indian Curry Chicken Recipe for Flavor Lovers.jpeg" alt="Chicken Curry" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Chicken Curry</div>
+                    <div class="item-description">Traditional Indian-style chicken simmered in onion-tomato gravy with house spices</div>
                 </div>
             </div>
+            <div class="item-price">$14.99</div>
         </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Chicken Tikka Masala - Simply Recipes - Fewer Worries, More Delight.jpeg" alt="Chicken Tikka Masala" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Chicken Tikka Masala</div>
+                    <div class="item-description">Char-grilled chicken pieces in a creamy, spiced tikka masala</div>
+                </div>
+            </div>
+            <div class="item-price">$15.99</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Authentic Butter Chicken Recipe – Rich, Creamy & Flavorful.jpeg" alt="Butter Chicken" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Butter Chicken</div>
+                    <div class="item-description">Tender tandoori chicken simmered in a smooth, buttery tomato sauce</div>
+                </div>
+            </div>
+            <div class="item-price">$15.99</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Nepal Goat Curry Recipe.jpeg" alt="Goat Curry" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Goat Curry</div>
+                    <div class="item-description">Tender goat meat cooked slowly in traditional Indian spices</div>
+                </div>
+            </div>
+            <div class="item-price">$16.99</div> <!-- updated -->
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Mughlai Chicken- mouthwatering delicious Chicken Gravy Recipe.jpeg" alt="Chicken Mughlai" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Chicken Mughlai</div>
+                    <div class="item-description">Royal Mughlai-style chicken cooked in a rich cashew-cream gravy</div>
+                </div>
+            </div>
+            <div class="item-price">$14.99</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Chicken Chettinad Recipe.jpeg" alt="Chicken Chettinad" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Chicken Chettinad</div>
+                    <div class="item-description">South Indian-style chicken curry infused with black pepper and coconut</div>
+                </div>
+            </div>
+            <div class="item-price">$14.99</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Goat Meat stew with cocoyams  – AFROVITALITYEATS - Copy.jpeg" alt="Goat Stew" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Goat Stew</div>
+                    <div class="item-description">Slow-cooked goat in a mild, flavorful broth with South Indian notes</div>
+                </div>
+            </div>
+            <div class="item-price">$16.99</div> <!-- updated -->
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/13M views · 149 reactions _ Egg Masala Curry _ curry, egg, chef _ Egg Masala Curry by Chef Sanjyot Keer _ By Sanjyot Keer _ Facebook.jpeg" alt="Egg Masala Curry" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Egg Masala Curry</div>
+                    <div class="item-description">Boiled eggs cooked in a thick, aromatic masala curry</div>
+                </div>
+            </div>
+            <div class="item-price">$12.99</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Chicken Mappas _ Video - NISH KITCHEN.jpeg" alt="Chicken Mappas" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Chicken Mappas</div>
+                    <div class="item-description">Kerala-style chicken curry cooked with coconut milk and aromatic spices</div>
+                </div>
+            </div>
+            <div class="item-price">$14.99</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Murg Musallam Biryani Recipe in Hindi.jpeg" alt="Tandoori Murgh Mussallam" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Tandoori Murgh Mussallam</div>
+                    <div class="item-description">Whole marinated chicken roasted and simmered in rich gravy</div>
+                </div>
+            </div>
+            <div class="item-price">$14.99</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Chicken Saag - Palak Chicken (Chicken Spinach Curry).jpeg" alt="Chicken Saag" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Chicken Saag</div>
+                    <div class="item-description">Chicken pieces cooked in a mildly spiced spinach-based curry</div>
+                </div>
+            </div>
+            <div class="item-price">$14.99</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Goat Meat Curry (Khasi Ko Masu) खसीको मासु.jpeg" alt="Goat Saag" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Goat Saag</div>
+                    <div class="item-description">Goat meat simmered in a spiced spinach and herb gravy</div>
+                </div>
+            </div>
+            <div class="item-price">$16.99</div> <!-- updated -->
+        </div>
+    </div>
+</div>
+
 
         <!-- SEAFOOD Category -->
-        <div class="category">
-            <div class="category-header" onclick="toggleCategory(this)">
-                <h3><i class="fas fa-fish seafood-icon"></i> SEA FOOD</h3>
-                <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
-            </div>
-            <div class="category-content">
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Easy Prawn Tikka Masala.jpeg" alt="Shrimp Tikka Masala" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Shrimp Tikka Masala</div>
-                            <div class="item-description">Juicy shrimp grilled and simmered in a creamy, spiced tikka masala sauce</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$14.99</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Fish Tikka Masala - Tiffin And Tea.jpeg" alt="Fish Tikka Masala" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Fish Tikka Masala</div>
-                            <div class="item-description">Tender fish fillets cooked in a rich, smoky tikka masala gravy</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$14.49</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Salmon Tikka - Shanaz Rafiq Recipes - Salmon Tikka - Salmon Tikka.jpeg" alt="Salmon Tikka Masala" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Salmon Tikka Masala</div>
-                            <div class="item-description">Grilled salmon pieces served in a luscious tikka masala with bold spices</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$14.49</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Coconut Curry Shrimp.jpeg" alt="Cochin Shrimp Curry" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Cochin Shrimp Curry</div>
-                            <div class="item-description">Coastal-style shrimp curry with coconut, curry leaves, and Southern spices</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$14.49</div>
-                </div>
-                <div class="menu-item">
-                    <div class="item-details">
-                        <img src="assets/images/menu/Masala Jhinga Recipe - Awesome Cuisine.jpeg" alt="Jhinga Masala" class="item-image">
-                        <div class="item-info">
-                            <div class="item-name">Jhinga Masala</div>
-                            <div class="item-description">A hearty prawn curry cooked in a robust onion-tomato gravy with aromatic spices</div>
-                        </div>
-                    </div>
-                    <div class="item-price">$14.99</div>
+     <div class="category">
+    <div class="category-header" onclick="toggleCategory(this)">
+        <h3><i class="fas fa-fish seafood-icon"></i> SEA FOOD</h3>
+        <div class="category-icon"><i class="fas fa-chevron-down"></i></div>
+    </div>
+    <div class="category-content">
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Easy Prawn Tikka Masala.jpeg" alt="Shrimp Tikka Masala" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Shrimp Tikka Masala</div>
+                    <div class="item-description">Juicy shrimp grilled and simmered in a creamy, spiced tomato tikka sauce</div>
                 </div>
             </div>
+            <div class="item-price">$15.99</div>
         </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Fish Tikka Masala - Tiffin And Tea.jpeg" alt="Fish Tikka Masala" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Fish Tikka Masala</div>
+                    <div class="item-description">Tender fish fillets cooked in a rich, smoky tikka masala gravy.</div>
+                </div>
+            </div>
+            <div class="item-price">$15.99</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Salmon Tikka - Shanaz Rafiq Recipes - Salmon Tikka - Salmon Tikka.jpeg" alt="Salmon Tikka Masala" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Salmon Tikka Masala</div>
+                    <div class="item-description">Grilled salmon pieces served in a luscious tikka masala with bold spices.</div>
+                </div>
+            </div>
+            <div class="item-price">$15.99</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Coconut Curry Shrimp.jpeg" alt="Cochin Shrimp Curry" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Cochin Shrimp Curry</div>
+                    <div class="item-description">Coastal-style shrimp curry with coconut, curry leaves, and Southern spices</div>
+                </div>
+            </div>
+            <div class="item-price">$15.99</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-details">
+                <img src="assets/images/menu/Masala Jhinga Recipe - Awesome Cuisine.jpeg" alt="Jhinga Masala" class="item-image">
+                <div class="item-info">
+                    <div class="item-name">Jhinga Masala</div>
+                    <div class="item-description">A hearty prawn curry cooked in a robust onion-tomato gravy with aromatic spices.</div>
+                </div>
+            </div>
+            <div class="item-price">$15.99</div>
+        </div>
+    </div>
+</div>
+
 
         <!-- LAMB Category -->
         <div class="category">
@@ -1176,7 +1185,7 @@
                             <div class="item-description">Succulent lamb cooked in a robust onion-tomato masala gravy</div>
                         </div>
                     </div>
-                    <div class="item-price">$16.99</div>
+                    <div class="item-price">$17.99</div>
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
@@ -1186,7 +1195,7 @@
                             <div class="item-description">Grilled lamb chunks in a creamy, spiced tikka masala sauce</div>
                         </div>
                     </div>
-                    <div class="item-price">$16.99</div>
+                    <div class="item-price">$17.99</div>
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
@@ -1196,7 +1205,7 @@
                             <div class="item-description">Lamb gently stewed in coconut milk with mild southern spices</div>
                         </div>
                     </div>
-                    <div class="item-price">$16.99</div>
+                    <div class="item-price">$17.99</div>
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
@@ -1206,7 +1215,7 @@
                             <div class="item-description">Kashmiri-style lamb curry with rich, aromatic red chili and yogurt base</div>
                         </div>
                     </div>
-                    <div class="item-price">$16.99</div>
+                    <div class="item-price">$17.99</div>
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
@@ -1216,7 +1225,7 @@
                             <div class="item-description">Coconut-rich lamb curry with mild spices</div>
                         </div>
                     </div>
-                    <div class="item-price">$16.99</div>
+                    <div class="item-price">$17.99</div>
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
@@ -1226,7 +1235,7 @@
                             <div class="item-description">Spicy Goan curry with lamb and vinegar-based masala for a fiery kick</div>
                         </div>
                     </div>
-                    <div class="item-price">$16.99</div>
+                    <div class="item-price">$17.99</div>
                 </div>
             </div>
         </div>
@@ -1393,7 +1402,7 @@
                             <div class="item-description">Juicy lamb simmered with saffron rice and whole spices for a rich, meaty biryani</div>
                         </div>
                     </div>
-                    <div class="item-price">$14.99</div>
+                    <div class="item-price">$16.99</div>
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
@@ -1413,7 +1422,7 @@
                             <div class="item-description">Succulent goat meat layered with spiced rice and cooked to perfection in dum style</div>
                         </div>
                     </div>
-                    <div class="item-price">$14.99</div>
+                    <div class="item-price">$15.99</div>
                 </div>
             </div>
         </div>
@@ -1492,7 +1501,7 @@
                             <div class="item-description">Boneless chicken chunks marinated in aromatic spices and roasted in the tandoor</div>
                         </div>
                     </div>
-                    <div class="item-price">$13.99</div>
+                    <div class="item-price">$14.99</div>
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
@@ -1502,7 +1511,7 @@
                             <div class="item-description">Classic tandoori chicken on the bone, infused with bold spices and smoky flavor</div>
                         </div>
                     </div>
-                    <div class="item-price">$13.99</div>
+                    <div class="item-price">$14.99</div>
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
@@ -1512,7 +1521,7 @@
                             <div class="item-description">Creamy, mildly spiced chicken grilled to tender perfection in a white malai marinade</div>
                         </div>
                     </div>
-                    <div class="item-price">$13.99</div>
+                    <div class="item-price">$14.99</div>
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
@@ -1732,6 +1741,16 @@
                 </div>
                 <div class="menu-item">
                     <div class="item-details">
+                        <img src="assets/images/menu/53828c4ec35b6234938ab3effc2242e6.jpg" alt="Mango Falooda" class="item-image">
+                        <div class="item-info">
+                            <div class="item-name">Mango Falooda</div>
+                            <div class="item-description">A tropical twist to falooda with mango pulp and mango ice cream</div>
+                        </div>
+                    </div>
+                    <div class="item-price">$9.99</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-details">
                         <img src="assets/images/menu/Pistachio Falooda with Vanilla Ice cream.jpeg" alt="Pistachio Falooda" class="item-image">
                         <div class="item-info">
                             <div class="item-name">Pistachio Falooda</div>
@@ -1754,6 +1773,7 @@
         </div>
     </div>
 </div>
+
 
 
       <!-- Sides Section -->
